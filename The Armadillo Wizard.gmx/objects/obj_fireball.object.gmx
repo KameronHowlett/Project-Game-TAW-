@@ -25,9 +25,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>dir = obj_playerStaff.dir;
+            <string>///Variables
+dir = obj_playerStaff.dir;
 maxspeed = 6;
-vsp = 0;
+vsp = random_range(-0.5, 0.5);
 </string>
           </argument>
         </arguments>
@@ -52,8 +53,8 @@ vsp = 0;
             <kind>1</kind>
             <string>
 x += dir * maxspeed;
-vsp += 0.02;
-y += (vsp * vsp);
+vsp += 0.01;
+y += vsp;
 </string>
           </argument>
         </arguments>

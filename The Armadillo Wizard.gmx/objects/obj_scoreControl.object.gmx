@@ -182,6 +182,9 @@ draw_sprite(spr_mana,0,20,600)
 
 draw_healthbar(20,600,39,750,stamina,c_orange,c_navy,c_blue,3,false,false);
 draw_healthbar(45,730,195,750,hp,c_white,c_red,c_green,0,true,false);
+
+if(obj_playerBody.jetpack == true)
+draw_healthbar(45,710,130,720,obj_playerBody.jetfuel,c_white,c_orange,c_orange,0,false,false);
 </string>
           </argument>
         </arguments>

@@ -30,6 +30,7 @@
     <sprite>sprites\spr_sparkle</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_mana</sprite>
+    <sprite>sprites\spr_jetpack</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_LevelAtlas</background>
@@ -51,7 +52,8 @@
     <object>objects\obj_backgroundControl</object>
     <object>objects\obj_oneWayPlatform</object>
     <object>objects\obj_enemy1</object>
-    <object>objects\obj_hats</object>
+    <object>objects\obj_hat</object>
+    <object>objects\obj_jetpack</object>
     <object>objects\obj_fireball</object>
     <object>objects\obj_gem</object>
     <object>objects\obj_rgem</object>

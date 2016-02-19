@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// Intialize Variables
-
+image_speed = 0.2;
 dir = -1;
-moveSpeed = 2;
+moveSpeed = 1;
 grav = 0.2;
 hsp = 0;
 vsp = 0;
