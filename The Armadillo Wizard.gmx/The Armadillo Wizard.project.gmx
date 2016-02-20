@@ -45,6 +45,7 @@
   </fonts>
   <objects name="objects">
     <object>objects\obj_platform</object>
+    <object>objects\obj_wall</object>
     <object>objects\obj_movingCollider</object>
     <object>objects\obj_playerBody</object>
     <object>objects\obj_camera</object>
@@ -60,6 +61,7 @@
     <object>objects\obj_title</object>
     <object>objects\obj_scoreControl</object>
     <object>objects\obj_movingPlatformH</object>
+    <object>objects\obj_pauseMenu</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_Test</room>
