@@ -83,9 +83,21 @@ if(place_meeting(x+hsp,y,obj_platform))
     //move by 1 or -1
         x += sign(hsp);
     }
+    collectable = true;
     hsp = 0;
 }
 
+if(place_meeting(x+hsp,y,obj_wall))
+{
+//sign returns 1 or -1 depending on whether hsp is posative or negative, so as long as it isn't one pixel away continue
+    while(!place_meeting(x+sign(hsp),y,obj_platform))
+    {
+    //move by 1 or -1
+        x += sign(hsp);
+    }
+    collectable = true;
+    hsp = 0;
+}
 
 x += hsp;
 

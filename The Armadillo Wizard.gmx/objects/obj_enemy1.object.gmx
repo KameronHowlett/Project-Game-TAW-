@@ -35,6 +35,7 @@ vsp = 0;
 myHealth = 100;
 
 rng = irandom(5);
+loot = irandom(10);
 </string>
           </argument>
         </arguments>
@@ -68,6 +69,9 @@ if(myHealth &lt;= 0)
     {
         instance_create(x,y-2,obj_rgem)
     }
+    if(loot == 8)
+    instance_create(x,y-2,obj_healthkit)
+    
     instance_destroy();
 }
 

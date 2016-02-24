@@ -29,7 +29,10 @@
 dir = -1;
 jetting = false;
 equipped = false;
+lasting = 100;
 
+startx = x;
+starty = y;
 </string>
           </argument>
         </arguments>
@@ -58,6 +61,8 @@ if(equipped)
 {
     x = obj_playerBody.x;
     y = obj_playerBody.y;
+    
+    lasting -= 0.1;
 
     if(obj_playerBody.move !=0) 
         dir = obj_playerBody.move;
@@ -75,7 +80,6 @@ if(equipped)
 
     if(jetting &amp;&amp; obj_playerBody.jetfuel &gt; 0)
     {
-        effect_create_below(ef_smoke, x +(-15 * dir), y + 10, 0.1, c_red);
         image_index = 2;
     }
     else
@@ -85,6 +89,15 @@ if(equipped)
 }
 else
 image_index = 0;
+
+if(lasting &lt;= 0)
+{
+    image_index = 1;
+    equipped = false;
+    x = startx;
+    y = starty;
+    lasting = 100;
+}
 </string>
           </argument>
         </arguments>

@@ -12,25 +12,37 @@
       <sprite>sprites\spr_playerBodyBall</sprite>
       <sprite>sprites\spr_playerBodyWallSlide</sprite>
       <sprite>sprites\spr_playerBodyJumpUp</sprite>
-      <sprite>sprites\spr_playerBodyRun</sprite>
       <sprite>sprites\spr_playerBodyMove</sprite>
+      <sprite>sprites\spr_playerBodyRun</sprite>
       <sprite>sprites\spr_playerBodyCollide</sprite>
       <sprite>sprites\spr_playerStaffHold</sprite>
     </sprites>
     <sprite>sprites\spr_platform</sprite>
+    <sprite>sprites\spr_wall</sprite>
     <sprite>sprites\spr_mC</sprite>
     <sprite>sprites\spr_oneWayPlatform</sprite>
     <sprite>sprites\spr_movePlatform</sprite>
     <sprite>sprites\spr_enemyBody</sprite>
+    <sprite>sprites\spr_enemy2</sprite>
+    <sprite>sprites\spr_enemy2Wall</sprite>
     <sprite>sprites\spr_playerStaff</sprite>
     <sprite>sprites\spr_playerStaffHolst</sprite>
     <sprite>sprites\spr_hats</sprite>
     <sprite>sprites\spr_fireball</sprite>
     <sprite>sprites\spr_gems</sprite>
+    <sprite>sprites\spr_healthkit</sprite>
     <sprite>sprites\spr_sparkle</sprite>
     <sprite>sprites\spr_title</sprite>
     <sprite>sprites\spr_mana</sprite>
     <sprite>sprites\spr_jetpack</sprite>
+    <sprite>sprites\spr_enemyShot</sprite>
+    <sprites name="Logos">
+      <sprite>sprites\spr_logos</sprite>
+      <sprite>sprites\spr_jjGames</sprite>
+    </sprites>
+    <sprite>sprites\spr_partPixel</sprite>
+    <sprite>sprites\spr_hudgraphics</sprite>
+    <sprite>sprites\spr_powerupBar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_LevelAtlas</background>
@@ -38,6 +50,7 @@
     <background>background\background2</background>
     <background>background\background3</background>
     <background>background\background4</background>
+    <background>background\bck_stars</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -53,17 +66,24 @@
     <object>objects\obj_backgroundControl</object>
     <object>objects\obj_oneWayPlatform</object>
     <object>objects\obj_enemy1</object>
+    <object>objects\obj_enemy2</object>
+    <object>objects\obj_enemy2Wall</object>
     <object>objects\obj_hat</object>
     <object>objects\obj_jetpack</object>
     <object>objects\obj_fireball</object>
     <object>objects\obj_gem</object>
     <object>objects\obj_rgem</object>
+    <object>objects\obj_healthkit</object>
     <object>objects\obj_title</object>
     <object>objects\obj_scoreControl</object>
     <object>objects\obj_movingPlatformH</object>
     <object>objects\obj_pauseMenu</object>
+    <object>objects\obj_enemyShot</object>
+    <object>objects\Logos</object>
+    <object>objects\obj_partLogo</object>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rm_logo</room>
     <room>rooms\rm_Test</room>
   </rooms>
   <help>

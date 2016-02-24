@@ -51,10 +51,15 @@ hp = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(scorePoints &lt; scoreMax - 100)
+            <string>x = obj_playerBody.x;
+y = obj_playerBody.y;
+if(scorePoints &lt; scoreMax - 100)
 scorePoints += 10;
 else if (scorePoints &lt; scoreMax)
 scorePoints += 1;
+
+if(hp &gt; 100)
+hp = 100;
 </string>
           </argument>
         </arguments>
@@ -178,13 +183,22 @@ scorePoints += 1;
           <argument>
             <kind>1</kind>
             <string>draw_sprite(spr_title,0,890,60)
-draw_sprite(spr_mana,0,20,600)
+//draw_sprite(spr_mana,0,20,600)
 
-draw_healthbar(20,600,39,750,stamina,c_orange,c_navy,c_blue,3,false,false);
-draw_healthbar(45,730,195,750,hp,c_white,c_red,c_green,0,true,false);
+draw_healthbar(50,570,90,720,stamina,c_orange,c_navy,c_blue,3,false,false);
+draw_healthbar(160,720,300,760,hp,c_white,c_red,c_green,0,true,false);
+draw_sprite(spr_hudgraphics,0,150,740);
+draw_sprite(spr_hudgraphics,1,70,740);
+draw_sprite(spr_hudgraphics,2,930,740);
 
 if(obj_playerBody.jetpack == true)
-draw_healthbar(45,710,130,720,obj_playerBody.jetfuel,c_white,c_orange,c_orange,0,false,false);
+{
+    draw_healthbar(760,720,900,760,obj_jetpack.lasting,c_white,spr_powerupBar,spr_powerupBar,1,false,false);
+    draw_healthbar(400,15,600,50,obj_playerBody.jetfuel * 2,c_black,c_orange,c_orange,0,true,true);
+    draw_sprite(spr_hudgraphics,3,930,740);
+    
+}
+
 </string>
           </argument>
         </arguments>
