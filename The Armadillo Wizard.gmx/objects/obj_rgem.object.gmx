@@ -44,6 +44,47 @@ collectable = false;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Paticles
+
+partGemBlast_sys = part_system_create();
+part_system_depth(partGemBlast_sys, 2000000);
+//Particles
+partGemBlast = part_type_create();
+part_type_shape(partGemBlast,spr_partnum2);
+part_type_sprite(partGemBlast,spr_partnum2,false,false,false);
+part_type_colour1(partGemBlast,c_white);
+part_type_size(partGemBlast,1,0.5,0,0);
+part_type_alpha2(partGemBlast,0.8,0);
+part_type_speed(partGemBlast,0.8,1,0,0);
+part_type_direction(partGemBlast,0,359,0,0);
+part_type_gravity(partGemBlast,0.02,270);
+part_type_life(partGemBlast,room_speed,room_speed/2);
+
+
+
+//Particle Emitter
+partGemBlast_emit = part_emitter_create(partGemBlast_sys);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="3" enumb="0">
       <action>
@@ -117,6 +158,29 @@ y += vsp;
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Particle Step
+part_emitter_region(partGemBlast_sys,partGemBlast_emit,x-2,x+2,y-2,y+2,0,0);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="4" ename="obj_playerBody">
       <action>
@@ -136,10 +200,10 @@ y += vsp;
           <argument>
             <kind>1</kind>
             <string>
-
 if(collectable == true)
 {
-    obj_scoreControl.scoreMax += 200;
+    obj_scoreControl.scoreMax += 50;
+    part_emitter_burst(partGemBlast_sys,partGemBlast_emit,partGemBlast,1);
     instance_destroy();
 }
 </string>

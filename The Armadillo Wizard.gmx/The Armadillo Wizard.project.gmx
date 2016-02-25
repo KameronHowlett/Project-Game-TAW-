@@ -41,8 +41,9 @@
       <sprite>sprites\spr_jjGames</sprite>
     </sprites>
     <sprite>sprites\spr_partPixel</sprite>
+    <sprite>sprites\spr_partnum</sprite>
+    <sprite>sprites\spr_partnum2</sprite>
     <sprite>sprites\spr_hudgraphics</sprite>
-    <sprite>sprites\spr_powerupBar</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_LevelAtlas</background>
