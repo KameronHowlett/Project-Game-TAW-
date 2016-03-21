@@ -3,8 +3,8 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
-  <persistent>0</persistent>
+  <depth>10</depth>
+  <persistent>-1</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
@@ -55,12 +55,22 @@ if(key_paused)
     if(!pause)
     {
         pause = 1;
-        instance_deactivate_all(true);
+        room_goto(rm_pauseScreen);
+        //instance_deactivate_all(true);
     }
     else
     {
         pause = 0;
-        instance_activate_all();
+        with(obj_partScreen)
+        {
+            part_system_destroy(partPulse_emit);
+        }
+        if(global.levelnumber == 1)
+        {
+            room_goto(rm_Test);
+            //instance_activate_all();
+        }
+        
     }
 }
 </string>
@@ -87,11 +97,11 @@ if(key_paused)
             <kind>1</kind>
             <string>if(pause)
 {
-    draw_set_colour(c_black);
-    draw_rectangle(0,0,view_wport[0],view_hport[0],0);
-    draw_set_halign(fa_center);
+    //draw_set_colour(c_black);
+    //draw_rectangle(0,0,view_wport[0],view_hport[0],0);
+    //draw_set_halign(fa_center);
     
-    draw_sprite(spr_title,0,500,200)
+    draw_sprite(spr_titleLogo,0,500,100)
 
 }
 </string>

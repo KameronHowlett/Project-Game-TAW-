@@ -4,7 +4,9 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\MainMusic</sound>
+  </sounds>
   <sprites name="sprites">
     <sprites name="PlayerSprites">
       <sprite>sprites\spr_playerBody</sprite>
@@ -39,11 +41,20 @@
     <sprites name="Logos">
       <sprite>sprites\spr_logos</sprite>
       <sprite>sprites\spr_jjGames</sprite>
+      <sprite>sprites\spr_spaceShip1</sprite>
+      <sprite>sprites\spr_titleLogo</sprite>
+      <sprite>sprites\spr_shipEngine</sprite>
     </sprites>
     <sprite>sprites\spr_partPixel</sprite>
     <sprite>sprites\spr_partnum</sprite>
+    <sprite>sprites\sprite39</sprite>
     <sprite>sprites\spr_partnum2</sprite>
     <sprite>sprites\spr_hudgraphics</sprite>
+    <sprites name="PauseScreenStuff">
+      <sprite>sprites\spr_screenPulse</sprite>
+    </sprites>
+    <sprite>sprites\spr_createdby</sprite>
+    <sprite>sprites\spr_pressStart</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_LevelAtlas</background>
@@ -52,6 +63,7 @@
     <background>background\background3</background>
     <background>background\background4</background>
     <background>background\bck_stars</background>
+    <background>background\bck_screen</background>
   </backgrounds>
   <paths name="paths"/>
   <fonts name="fonts">
@@ -78,14 +90,23 @@
     <object>objects\obj_title</object>
     <object>objects\obj_scoreControl</object>
     <object>objects\obj_movingPlatformH</object>
-    <object>objects\obj_pauseMenu</object>
     <object>objects\obj_enemyShot</object>
-    <object>objects\Logos</object>
+    <object>objects\obj_Logos</object>
+    <object>objects\obj_pauseMenu</object>
     <object>objects\obj_partLogo</object>
+    <object>objects\part_Pause</object>
+    <object>objects\obj_partScreen</object>
+    <object>objects\obj_globalLevel</object>
+    <object>objects\obj_level1</object>
+    <object>objects\obj_AI</object>
+    <object>objects\obj_logoShip</object>
+    <object>objects\obj_shipEngines</object>
+    <object>objects\obj_pressStart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
     <room>rooms\rm_Test</room>
+    <room>rooms\rm_pauseScreen</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

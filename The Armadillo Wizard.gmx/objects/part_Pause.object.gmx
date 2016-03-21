@@ -31,61 +31,20 @@ partStar_sys = part_system_create();
 partStar = part_type_create();
 part_type_shape(partStar,spr_partPixel);
 part_type_sprite(partStar,spr_partPixel,false,false,false);
-part_type_size(partStar,3,4,-0.001,0);
+part_type_size(partStar,1,2,-0.001,0);
 part_type_colour1(partStar,c_white);
 part_type_alpha2(partStar,.5,.1);
 part_type_life(partStar,room_speed,room_speed *2)
 
 
 partStar_emit = part_emitter_create(partStar_sys);
-part_emitter_region(partStar_sys,partStar_emit,0,1000,0,800,ps_shape_rectangle,ps_distr_linear);
+part_emitter_region(partStar_sys,partStar_emit,0,room_width,0,room_height,ps_shape_rectangle,ps_distr_linear);
 part_emitter_stream(partStar_sys,partStar_emit,partStar,-3);
 
 //Advance System
 repeat (room_speed * 3)
 {
     part_system_update(partStar_sys);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Stars II
-partStar2_sys = part_system_create();
-
-partStar2 = part_type_create();
-part_type_shape(partStar2,spr_partPixel);
-part_type_sprite(partStar2,spr_partPixel,false,false,false);
-part_type_size(partStar2,1,2,-0.001,0);
-part_type_colour1(partStar2,c_white);
-part_type_alpha2(partStar2,.5,.1);
-part_type_life(partStar2,room_speed,room_speed *2)
-
-
-partStar2_emit = part_emitter_create(partStar2_sys);
-part_emitter_region(partStar2_sys,partStar2_emit,0,1000,0,800,ps_shape_rectangle,ps_distr_linear);
-part_emitter_stream(partStar2_sys,partStar2_emit,partStar2,-1);
-
-//Advance System
-repeat (room_speed * 3)
-{
-    part_system_update(partStar2_sys);
 }
 </string>
           </argument>

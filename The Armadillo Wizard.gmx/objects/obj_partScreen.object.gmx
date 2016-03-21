@@ -25,67 +25,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Stars
-partStar_sys = part_system_create();
+            <string>///Pulse System
+partPulse_sys = part_system_create();
 
-partStar = part_type_create();
-part_type_shape(partStar,spr_partPixel);
-part_type_sprite(partStar,spr_partPixel,false,false,false);
-part_type_size(partStar,3,4,-0.001,0);
-part_type_colour1(partStar,c_white);
-part_type_alpha2(partStar,.5,.1);
-part_type_life(partStar,room_speed,room_speed *2)
-
-
-partStar_emit = part_emitter_create(partStar_sys);
-part_emitter_region(partStar_sys,partStar_emit,0,1000,0,800,ps_shape_rectangle,ps_distr_linear);
-part_emitter_stream(partStar_sys,partStar_emit,partStar,-3);
-
-//Advance System
-repeat (room_speed * 3)
-{
-    part_system_update(partStar_sys);
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Stars II
-partStar2_sys = part_system_create();
-
-partStar2 = part_type_create();
-part_type_shape(partStar2,spr_partPixel);
-part_type_sprite(partStar2,spr_partPixel,false,false,false);
-part_type_size(partStar2,1,2,-0.001,0);
-part_type_colour1(partStar2,c_white);
-part_type_alpha2(partStar2,.5,.1);
-part_type_life(partStar2,room_speed,room_speed *2)
+partPulse = part_type_create();
+part_type_shape(partPulse,spr_screenPulse);
+part_type_sprite(partPulse,spr_screenPulse,false,false,false);
+part_type_size(partPulse,0.5,1,0,0);
+part_type_colour1(partPulse,c_white);
+part_type_alpha2(partPulse,.3,0);
+part_type_life(partPulse,room_speed,room_speed *2)
+part_type_speed(partPulse,0.1,0.5,0,0);
+part_type_direction(partPulse,270,270,0,0);
 
 
-partStar2_emit = part_emitter_create(partStar2_sys);
-part_emitter_region(partStar2_sys,partStar2_emit,0,1000,0,800,ps_shape_rectangle,ps_distr_linear);
-part_emitter_stream(partStar2_sys,partStar2_emit,partStar2,-1);
+partPulse_emit = part_emitter_create(partPulse_sys);
+part_emitter_region(partPulse_sys,partPulse_emit,view_wview[0]/2,view_wview[0]/2,0,view_hview[0],ps_shape_rectangle,ps_distr_linear);
+part_emitter_stream(partPulse_sys,partPulse_emit,partPulse,-60);
+part_system_depth( partPulse_sys, -1 );
 
 //Advance System
 repeat (room_speed * 3)
 {
-    part_system_update(partStar2_sys);
+    part_system_update(partPulse_sys);
 }
 </string>
           </argument>
@@ -109,8 +71,9 @@ repeat (room_speed * 3)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>part_system_destroy(partStar_sys);
-part_system_destroy(partStar2_sys);
+            <string>part_system_destroy(partPulse_emit);
+part_emitter_destroy(partPulse_sys, partPulse_emit);
+part_particles_clear(partPulse_emit);
 </string>
           </argument>
         </arguments>
