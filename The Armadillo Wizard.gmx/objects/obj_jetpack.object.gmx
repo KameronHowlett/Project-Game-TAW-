@@ -63,8 +63,8 @@ part_system_depth(partFire_sys, 3);
 partFire = part_type_create();
 part_type_shape(partFire,spr_partPixel);
 part_type_sprite(partFire,spr_partPixel,false,false,false);
-part_type_size(partFire,2,3,-0.01,0);
-part_type_colour3(partFire,c_red,c_orange,c_yellow);
+part_type_size(partFire,1,2,-0.001,1);
+part_type_colour1(partFire,c_blue);
 part_type_alpha2(partFire, 0.9,0.5);
 part_type_speed(partFire, 0,0.5,0,0);
 part_type_direction(partFire,270,270,0,0);
@@ -83,13 +83,13 @@ part_system_depth(partSmoke_sys, 1500000);
 //Particle
 partSmoke = part_type_create();
 part_type_shape(partSmoke,spr_partPixel);
-part_type_sprite(partSmoke,spr_partPixel,false,false,false);
-part_type_size(partSmoke,2,3,-0.01,0);
-part_type_colour2(partSmoke,c_dkgray,c_gray);
-part_type_alpha2(partSmoke, 0.9,0.5);
+part_type_sprite(partSmoke,spr_partOrb,false,false,false);
+part_type_size(partSmoke,0.1,0.4,-0.005,0);
+part_type_colour3(partSmoke,c_white,c_aqua,c_aqua);
+part_type_alpha2(partSmoke, 0.5,0);
 part_type_speed(partSmoke, 0,0.5,-0.001,0);
 part_type_direction(partSmoke,250,290,0,0);
-part_type_gravity(partSmoke, 0.002, 270);
+//part_type_gravity(partSmoke, 0.002, 270);
 part_type_life(partSmoke,room_speed,room_speed * 2);
 
 //Paticle Emitter
@@ -143,8 +143,8 @@ if(equipped)
     if(jetting &amp;&amp; obj_playerBody.jetfuel &gt; 0)
     {
         image_index = 2;
-        part_emitter_region(partFire_sys,partFire_emit,x -(11 * dir),x -(11 * dir),y+8,y+8,ps_shape_ellipse,ps_distr_linear);
-        part_emitter_burst(partFire_sys,partFire_emit,partFire,8);
+       // part_emitter_region(partFire_sys,partFire_emit,x -(11 * dir),x -(11 * dir),y+8,y+8,ps_shape_ellipse,ps_distr_linear);
+        //part_emitter_burst(partFire_sys,partFire_emit,partFire,8);
         
         part_emitter_region(partSmoke_sys,partSmoke_emit,x -(11 * dir),x -(11 * dir),y+12,y+12,ps_shape_ellipse,ps_distr_linear);
         part_emitter_burst(partSmoke_sys,partSmoke_emit,partSmoke,30);

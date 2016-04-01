@@ -26,13 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>
-background_x[0] = view_xview[0] * 0.9
-background_x[1] = view_xview[0] * 0.6
-background_x[2] = view_xview[0] * 0.4
+background_x[0] = (view_xview[0] -10) * 0.9
+background_x[1] = (view_xview[0]-10) * 0.9
+background_x[2] = (view_xview[0]-10) * 0.9
 
-background_y[0] = view_yview[0] * 1
-background_y[1] = (view_yview[0] + 270) * 0.9
-background_y[2] = (view_yview[0] + 120) * 0.85
+background_y[0] = view_yview[0] - 40 * 1
+background_y[1] = (view_yview[0] -20) * 0.9
+background_y[2] = (view_yview[0] -10) * 0.85
 </string>
           </argument>
         </arguments>

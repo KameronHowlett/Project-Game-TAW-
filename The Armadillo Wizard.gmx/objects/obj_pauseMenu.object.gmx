@@ -50,7 +50,7 @@
             <kind>1</kind>
             <string>key_paused = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0,gp_start));
 
-if(key_paused)
+if(key_paused &amp;&amp; instance_exists(obj_playerBody))
 {
     if(!pause)
     {
@@ -67,7 +67,7 @@ if(key_paused)
         }
         if(global.levelnumber == 1)
         {
-            room_goto(rm_Test);
+            room_goto(rm_level1);
             //instance_activate_all();
         }
         

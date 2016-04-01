@@ -28,6 +28,31 @@
             <string>//VAriables
 dir = 1;
 aiming = 0;
+contin = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>obj_scoreControl.stamina += 1;
+contin = true;
 </string>
           </argument>
         </arguments>
@@ -82,9 +107,11 @@ if (obj_playerBody.floatingAim = true)
 }
 else
 {
-    if (obj_scoreControl.stamina &lt; 100)
-    obj_scoreControl.stamina += 0.4;
-    
+    if (obj_scoreControl.stamina &lt; 10 &amp;&amp; contin)
+    {
+        alarm[1] = 2;
+        contin = false;
+    }
     sprite_index = spr_playerStaffHolst;
     depth = 1;
     aiming = 0;
@@ -115,10 +142,10 @@ if(key_ableShoot)
 {
     if(aiming == 1)
     {
-        if(obj_scoreControl.stamina &gt;= 10)
+        if(obj_scoreControl.stamina &gt;= 1)
         {
             instance_create(self.x + (16 * dir),self.y + 3,obj_fireball);
-            obj_scoreControl.stamina -=10;
+            obj_scoreControl.stamina -=1;
         }
     }
 }

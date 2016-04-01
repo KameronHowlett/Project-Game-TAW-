@@ -42,7 +42,7 @@ part_type_direction(partPulse,270,270,0,0);
 partPulse_emit = part_emitter_create(partPulse_sys);
 part_emitter_region(partPulse_sys,partPulse_emit,view_wview[0]/2,view_wview[0]/2,0,view_hview[0],ps_shape_rectangle,ps_distr_linear);
 part_emitter_stream(partPulse_sys,partPulse_emit,partPulse,-60);
-part_system_depth( partPulse_sys, -1 );
+part_system_depth( partPulse_sys, -150 );
 
 //Advance System
 repeat (room_speed * 3)

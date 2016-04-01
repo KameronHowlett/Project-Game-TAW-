@@ -3,7 +3,7 @@
   <spriteName>spr_logos</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-200</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -40,27 +40,26 @@ image_speed = 0;
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
-        <id>211</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_sound</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>6</kind>
-            <sound>MainMusic</sound>
-          </argument>
-          <argument>
-            <kind>3</kind>
-            <string>1</string>
+            <kind>1</kind>
+            <string>act += 1;
+</string>
           </argument>
         </arguments>
       </action>
@@ -180,7 +179,7 @@ if(act == 6)
     image_alpha -= 0.01;
     if(image_alpha == 0)
     {
-        act = 7;
+        alarm[0] = 50;
 
     }
 }
@@ -200,7 +199,7 @@ if(act == 8)
     image_alpha -= 0.01;
     if(image_alpha == 0)
     {
-        act = 9;
+        alarm[0] = 50;
 
     }
 }

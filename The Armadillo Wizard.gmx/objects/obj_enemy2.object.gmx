@@ -91,7 +91,7 @@ if(distance_to_object(obj_playerBody) &lt; range &amp;&amp; canShoot)
 {
     instance_create(x,y,obj_enemyShot);
     canShoot = false;
-    alarm[0] = 100;
+    alarm[0] = 200;
 }
 
 if(myHealth &lt;= 0)

@@ -21,6 +21,8 @@
     </sprites>
     <sprite>sprites\spr_platform</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_ice</sprite>
+    <sprite>sprites\spr_icemask</sprite>
     <sprite>sprites\spr_mC</sprite>
     <sprite>sprites\spr_oneWayPlatform</sprite>
     <sprite>sprites\spr_movePlatform</sprite>
@@ -38,29 +40,52 @@
     <sprite>sprites\spr_mana</sprite>
     <sprite>sprites\spr_jetpack</sprite>
     <sprite>sprites\spr_enemyShot</sprite>
+    <sprite>sprites\spr_partPixel</sprite>
+    <sprite>sprites\spr_partnum</sprite>
+    <sprite>sprites\sprite39</sprite>
+    <sprite>sprites\spr_partnum2</sprite>
+    <sprite>sprites\spr_hudgraphics</sprite>
+    <sprite>sprites\spr_hudText</sprite>
+    <sprite>sprites\spr_hudLevels</sprite>
+    <sprite>sprites\spr_healthBars</sprite>
+    <sprite>sprites\spr_staminaBar</sprite>
     <sprites name="Logos">
       <sprite>sprites\spr_logos</sprite>
       <sprite>sprites\spr_jjGames</sprite>
       <sprite>sprites\spr_spaceShip1</sprite>
       <sprite>sprites\spr_titleLogo</sprite>
       <sprite>sprites\spr_shipEngine</sprite>
+      <sprite>sprites\spr_createdby</sprite>
+      <sprite>sprites\spr_pressStart</sprite>
+      <sprite>sprites\spr_PlaneLogoWing</sprite>
     </sprites>
-    <sprite>sprites\spr_partPixel</sprite>
-    <sprite>sprites\spr_partnum</sprite>
-    <sprite>sprites\sprite39</sprite>
-    <sprite>sprites\spr_partnum2</sprite>
-    <sprite>sprites\spr_hudgraphics</sprite>
     <sprites name="PauseScreenStuff">
       <sprite>sprites\spr_screenPulse</sprite>
     </sprites>
-    <sprite>sprites\spr_createdby</sprite>
-    <sprite>sprites\spr_pressStart</sprite>
+    <sprite>sprites\spr_pleasesignIn</sprite>
+    <sprite>sprites\spr_partOrb</sprite>
+    <sprite>sprites\spr_play</sprite>
+    <sprite>sprites\spr_dentLarge</sprite>
+    <sprite>sprites\spr_staffLarge</sprite>
+    <sprite>sprites\spr_jet</sprite>
+    <sprite>sprites\spr_jetWing</sprite>
+    <sprite>sprites\spr_planets</sprite>
+    <sprite>sprites\spr_levelArrow</sprite>
+    <sprite>sprites\spr_levelPlanetNames</sprite>
+    <sprite>sprites\spr_levelWisdom</sprite>
+    <sprite>sprites\spr_levelMolar</sprite>
+    <sprite>sprites\spr_levelCanine</sprite>
+    <sprite>sprites\spr_chest</sprite>
+    <sprite>sprites\spr_bolder</sprite>
+    <sprite>sprites\spr_jets</sprite>
+    <sprite>sprites\spr_jet2</sprite>
+    <sprite>sprites\spr_smoke</sprite>
+    <sprite>sprites\spr_levelUp</sprite>
   </sprites>
   <backgrounds name="background">
-    <background>background\bck_LevelAtlas</background>
-    <background>background\background1</background>
-    <background>background\background2</background>
-    <background>background\background3</background>
+    <background>background\background</background>
+    <background>background\Forground_close</background>
+    <background>background\Forground_Far</background>
     <background>background\background4</background>
     <background>background\bck_stars</background>
     <background>background\bck_screen</background>
@@ -68,44 +93,71 @@
   <paths name="paths"/>
   <fonts name="fonts">
     <font>fonts\font_test</font>
+    <font>fonts\fonr_Bunce</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_platform</object>
     <object>objects\obj_wall</object>
+    <object>objects\obj_oneWayPlatform</object>
+    <object>objects\obj_ice</object>
+    <object>objects\obj_icemask</object>
+    <object>objects\obj_bolder</object>
     <object>objects\obj_movingCollider</object>
     <object>objects\obj_playerBody</object>
-    <object>objects\obj_camera</object>
     <object>objects\obj_playerStaff</object>
+    <object>objects\obj_camera</object>
     <object>objects\obj_backgroundControl</object>
-    <object>objects\obj_oneWayPlatform</object>
     <object>objects\obj_enemy1</object>
+    <object>objects\obj_enemy1_5</object>
     <object>objects\obj_enemy2</object>
     <object>objects\obj_enemy2Wall</object>
-    <object>objects\obj_hat</object>
+    <object>objects\obj_chest</object>
     <object>objects\obj_jetpack</object>
     <object>objects\obj_fireball</object>
+    <object>objects\obj_enemyShot</object>
     <object>objects\obj_gem</object>
     <object>objects\obj_rgem</object>
     <object>objects\obj_healthkit</object>
     <object>objects\obj_title</object>
+    <object>objects\obj_globalLevel</object>
     <object>objects\obj_scoreControl</object>
     <object>objects\obj_movingPlatformH</object>
-    <object>objects\obj_enemyShot</object>
-    <object>objects\obj_Logos</object>
+    <objects name="LogoStartObjects">
+      <object>objects\obj_Logos</object>
+      <object>objects\obj_partLogo</object>
+      <object>objects\obj_logoShip</object>
+      <object>objects\obj_shipEngines</object>
+      <object>objects\obj_wing</object>
+      <object>objects\obj_pressStart</object>
+    </objects>
     <object>objects\obj_pauseMenu</object>
-    <object>objects\obj_partLogo</object>
-    <object>objects\part_Pause</object>
+    <object>objects\obj_partpause</object>
     <object>objects\obj_partScreen</object>
-    <object>objects\obj_globalLevel</object>
+    <object>objects\obj_snow</object>
+    <objects name="MainMenu">
+      <object>objects\obj_mainMenu</object>
+      <object>objects\obj_quit</object>
+      <object>objects\obj_signIn</object>
+      <object>objects\obj_staffLarge</object>
+      <object>objects\obj_dentLarge</object>
+      <object>objects\obj_levelPlanets</object>
+      <object>objects\obj_levelArrow</object>
+    </objects>
+    <objects name="Jet">
+      <object>objects\obj_jetBeg</object>
+      <object>objects\obj_engine2</object>
+      <object>objects\obj_engine1</object>
+      <object>objects\obj_startCam</object>
+      <object>objects\obj_jetwing</object>
+    </objects>
     <object>objects\obj_level1</object>
-    <object>objects\obj_AI</object>
-    <object>objects\obj_logoShip</object>
-    <object>objects\obj_shipEngines</object>
-    <object>objects\obj_pressStart</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
+    <room>rooms\rm_mainmenu</room>
+    <room>rooms\rm_levelSelect</room>
     <room>rooms\rm_Test</room>
+    <room>rooms\rm_level1</room>
     <room>rooms\rm_pauseScreen</room>
   </rooms>
   <help>

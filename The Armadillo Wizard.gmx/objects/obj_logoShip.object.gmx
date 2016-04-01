@@ -25,6 +25,44 @@
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Engine 2
+partEngine2_sys = part_system_create();
+
+partEngine2 = part_type_create();
+part_type_shape(partEngine2,spr_partPixel);
+part_type_sprite(partEngine2,spr_partOrb,false,false,false);
+part_type_size(partEngine2,0.5,1,-0.01,0);
+part_type_colour2(partEngine2,c_white, c_aqua);
+part_type_alpha2(partEngine2,.8,0);
+part_type_life(partEngine2,room_speed,room_speed *2);
+part_type_direction(partEngine2, 180,180,0,1);
+part_type_speed(partEngine2,5,5,0,0);
+
+
+partEngine2_emit = part_emitter_create(partEngine2_sys);
+
+part_emitter_stream(partEngine2_sys,partEngine2_emit,partEngine2,5);
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>///Engine
 partEngine_sys = part_system_create();
 
@@ -89,7 +127,8 @@ phase = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>part_emitter_region(partEngine_sys,partEngine_emit,x-200,x-200,y+25,y+25,ps_shape_rectangle,ps_distr_linear);
+            <string>//part_emitter_region(partEngine_sys,partEngine_emit,x-200,x-200,y+25,y+25,ps_shape_rectangle,ps_distr_linear);
+part_emitter_region(partEngine2_sys,partEngine2_emit,x-195,x-195,y+24,y+40,ps_shape_rectangle,ps_distr_linear);
 
 if(phase == 1)
 {
@@ -133,6 +172,7 @@ if(phase == 2)
           <argument>
             <kind>1</kind>
             <string>part_system_destroy(partEngine_sys);
+part_system_destroy(partEngine2_sys);
 </string>
           </argument>
         </arguments>

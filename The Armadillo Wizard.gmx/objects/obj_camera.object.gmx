@@ -25,8 +25,16 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x += (obj_playerBody.x-x)/10;
-y += (obj_playerBody.y-y)/10;
+            <string>if(instance_exists(obj_playerBody))
+{
+    x += (obj_playerBody.x-x)/10;
+    y += (obj_playerBody.y-y)/10;
+}
+else
+{
+    x += (obj_startCam.x-x)/10;
+    y += (obj_startCam.y-y)/10;
+}
 </string>
           </argument>
         </arguments>

@@ -56,7 +56,7 @@ image += irandom(7);
             <string>///Paticles
 
 partGemBlast_sys = part_system_create();
-part_system_depth(partGemBlast_sys, 2000000);
+part_system_depth(partGemBlast_sys, 1500000);
 //Particles
 partGemBlast = part_type_create();
 part_type_shape(partGemBlast,spr_partnum);

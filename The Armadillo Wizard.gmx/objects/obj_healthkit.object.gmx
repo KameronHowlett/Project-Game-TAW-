@@ -201,7 +201,8 @@ part_emitter_region(partHealthBlast_sys,partHealthBlast_emit,x-2,x+2,y-2,y+2,0,0
 
 if(collectable == true)
 {
-    obj_scoreControl.hp += 20;
+    if(obj_scoreControl.hp &lt; 5)
+    obj_scoreControl.hp += 1;
     
     part_emitter_burst(partHealthBlast_sys,partHealthBlast_emit,partHealthBlast,10);
     instance_destroy();

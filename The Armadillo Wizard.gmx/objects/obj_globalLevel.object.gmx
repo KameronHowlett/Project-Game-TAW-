@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="7" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>///Global Level control
 global.levelnumber = 0;
+global.scorePoints = 0;
+global.playerLevel = 0;
+global.pointsMaximum = 1000;
 </string>
           </argument>
         </arguments>
