@@ -27,8 +27,18 @@
     <sprite>sprites\spr_oneWayPlatform</sprite>
     <sprite>sprites\spr_movePlatform</sprite>
     <sprite>sprites\spr_enemyBody</sprite>
+    <sprite>sprites\spr_enemyball</sprite>
+    <sprite>sprites\spr_enemySquashed</sprite>
+    <sprite>sprites\spr_bounceCrab</sprite>
+    <sprite>sprites\spr_standCrab</sprite>
+    <sprite>sprites\spr_standCrabBolder</sprite>
     <sprite>sprites\spr_enemy2</sprite>
     <sprite>sprites\spr_enemy2Wall</sprite>
+    <sprites name="Hive">
+      <sprite>sprites\spr_hiveActive</sprite>
+      <sprite>sprites\spr_hiveEmerge</sprite>
+      <sprite>sprites\spr_hive</sprite>
+    </sprites>
     <sprite>sprites\spr_playerStaff</sprite>
     <sprite>sprites\spr_playerStaffHolst</sprite>
     <sprite>sprites\spr_hats</sprite>
@@ -48,6 +58,7 @@
     <sprite>sprites\spr_hudText</sprite>
     <sprite>sprites\spr_hudLevels</sprite>
     <sprite>sprites\spr_healthBars</sprite>
+    <sprite>sprites\spr_hiveHealth</sprite>
     <sprite>sprites\spr_staminaBar</sprite>
     <sprites name="Logos">
       <sprite>sprites\spr_logos</sprite>
@@ -66,31 +77,46 @@
     <sprite>sprites\spr_partOrb</sprite>
     <sprite>sprites\spr_play</sprite>
     <sprite>sprites\spr_dentLarge</sprite>
-    <sprite>sprites\spr_staffLarge</sprite>
     <sprite>sprites\spr_jet</sprite>
     <sprite>sprites\spr_jetWing</sprite>
-    <sprite>sprites\spr_planets</sprite>
-    <sprite>sprites\spr_levelArrow</sprite>
-    <sprite>sprites\spr_levelPlanetNames</sprite>
-    <sprite>sprites\spr_levelWisdom</sprite>
-    <sprite>sprites\spr_levelMolar</sprite>
-    <sprite>sprites\spr_levelCanine</sprite>
+    <sprites name="Menus">
+      <sprite>sprites\spr_planets</sprite>
+      <sprite>sprites\spr_levelArrow</sprite>
+      <sprite>sprites\spr_levelPlanetNames</sprite>
+      <sprite>sprites\spr_levelWisdom</sprite>
+      <sprite>sprites\spr_levelMolar</sprite>
+      <sprite>sprites\spr_levelCanine</sprite>
+      <sprite>sprites\spr_highlight</sprite>
+      <sprite>sprites\spr_levelImageWisdom</sprite>
+      <sprite>sprites\spr_planetNames</sprite>
+      <sprite>sprites\spr_levelNames</sprite>
+    </sprites>
     <sprite>sprites\spr_chest</sprite>
     <sprite>sprites\spr_bolder</sprite>
     <sprite>sprites\spr_jets</sprite>
     <sprite>sprites\spr_jet2</sprite>
     <sprite>sprites\spr_smoke</sprite>
     <sprite>sprites\spr_levelUp</sprite>
+    <sprite>sprites\spr_statIncrease</sprite>
+    <sprite>sprites\spr_fade</sprite>
+    <sprite>sprites\spr_spikes</sprite>
+    <sprite>sprites\spr_iceSpikes</sprite>
+    <sprite>sprites\spr_icePlatform</sprite>
+    <sprite>sprites\spr_levelEnd</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
     <background>background\Forground_close</background>
     <background>background\Forground_Far</background>
+    <background>background\Fog1</background>
+    <background>background\Fog2</background>
+    <background>background\background9</background>
     <background>background\background4</background>
     <background>background\bck_stars</background>
     <background>background\bck_screen</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\font_test</font>
     <font>fonts\fonr_Bunce</font>
@@ -98,8 +124,8 @@
   <objects name="objects">
     <object>objects\obj_platform</object>
     <object>objects\obj_wall</object>
-    <object>objects\obj_oneWayPlatform</object>
     <object>objects\obj_ice</object>
+    <object>objects\obj_oneWayPlatform</object>
     <object>objects\obj_icemask</object>
     <object>objects\obj_bolder</object>
     <object>objects\obj_movingCollider</object>
@@ -107,8 +133,13 @@
     <object>objects\obj_playerStaff</object>
     <object>objects\obj_camera</object>
     <object>objects\obj_backgroundControl</object>
-    <object>objects\obj_enemy1</object>
-    <object>objects\obj_enemy1_5</object>
+    <object>objects\obj_spike</object>
+    <object>objects\obj_hive1</object>
+    <object>objects\obj_enemyLeft</object>
+    <object>objects\obj_enemyRight</object>
+    <object>objects\obj_enemyBall</object>
+    <object>objects\obj_bounce</object>
+    <object>objects\obj_standCrab</object>
     <object>objects\obj_enemy2</object>
     <object>objects\obj_enemy2Wall</object>
     <object>objects\obj_chest</object>
@@ -130,19 +161,17 @@
       <object>objects\obj_wing</object>
       <object>objects\obj_pressStart</object>
     </objects>
+    <objects name="MainMenu">
+      <object>objects\obj_quit</object>
+      <object>objects\obj_signIn</object>
+      <object>objects\obj_levelPlanets</object>
+      <object>objects\obj_levelArrow</object>
+      <object>objects\obj_mainMenu</object>
+    </objects>
     <object>objects\obj_pauseMenu</object>
     <object>objects\obj_partpause</object>
     <object>objects\obj_partScreen</object>
     <object>objects\obj_snow</object>
-    <objects name="MainMenu">
-      <object>objects\obj_mainMenu</object>
-      <object>objects\obj_quit</object>
-      <object>objects\obj_signIn</object>
-      <object>objects\obj_staffLarge</object>
-      <object>objects\obj_dentLarge</object>
-      <object>objects\obj_levelPlanets</object>
-      <object>objects\obj_levelArrow</object>
-    </objects>
     <objects name="Jet">
       <object>objects\obj_jetBeg</object>
       <object>objects\obj_engine2</object>
@@ -151,10 +180,13 @@
       <object>objects\obj_jetwing</object>
     </objects>
     <object>objects\obj_level1</object>
+    <object>objects\obj_levelNames</object>
+    <object>objects\obj_iceSpikes</object>
+    <object>objects\obj_icePlatform</object>
+    <object>objects\obj_finish</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
-    <room>rooms\rm_mainmenu</room>
     <room>rooms\rm_levelSelect</room>
     <room>rooms\rm_Test</room>
     <room>rooms\rm_level1</room>

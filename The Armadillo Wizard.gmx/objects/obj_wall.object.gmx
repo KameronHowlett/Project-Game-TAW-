@@ -3,7 +3,7 @@
   <spriteName>spr_wall</spriteName>
   <solid>-1</solid>
   <visible>0</visible>
-  <depth>101</depth>
+  <depth>-100000000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>

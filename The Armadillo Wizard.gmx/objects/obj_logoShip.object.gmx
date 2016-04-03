@@ -8,7 +8,75 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//part_emitter_region(partEngine_sys,partEngine_emit,x-200,x-200,y+25,y+25,ps_shape_rectangle,ps_distr_linear);
+part_emitter_region(partEngine2_sys,partEngine2_emit,x-195,x-195,y+24,y+40,ps_shape_rectangle,ps_distr_linear);
+
+if(phase == 1)
+{
+    x += 1;
+}
+
+if (x &gt;= room_width/2)
+{
+    phase = 2;
+}
+
+if(phase == 2)
+{
+    with(obj_Logos)
+    {
+    act = 12;
+    }
+    phase = 3;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_system_destroy(partEngine_sys);
+part_system_destroy(partEngine2_sys);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="4">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -105,74 +173,6 @@ part_emitter_stream(partEngine_sys,partEngine_emit,partEngine,1);
 x = -420;
 y = 600;
 phase = 0;
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="3" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//part_emitter_region(partEngine_sys,partEngine_emit,x-200,x-200,y+25,y+25,ps_shape_rectangle,ps_distr_linear);
-part_emitter_region(partEngine2_sys,partEngine2_emit,x-195,x-195,y+24,y+40,ps_shape_rectangle,ps_distr_linear);
-
-if(phase == 1)
-{
-    x += 1;
-}
-
-if (x &gt;= room_width/2)
-{
-    phase = 2;
-}
-
-if(phase == 2)
-{
-    with(obj_Logos)
-    {
-    act = 12;
-    }
-    phase = 3;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="7" enumb="5">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>part_system_destroy(partEngine_sys);
-part_system_destroy(partEngine2_sys);
 </string>
           </argument>
         </arguments>

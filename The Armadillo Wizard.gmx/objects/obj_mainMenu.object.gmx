@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>button = 0;
-display_set_gui_size(1000,800)
 </string>
           </argument>
         </arguments>
@@ -52,6 +51,17 @@ display_set_gui_size(1000,800)
             <string>key_up = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0,gp_face1));
 key_down = keyboard_check_pressed(ord("S")) || (gamepad_button_check_pressed(0,gp_face1));
 key_press = keyboard_check_pressed(vk_space);
+key_back = keyboard_check_pressed(vk_backspace);
+
+with(obj_Logos)
+image_alpha = 0;
+
+if(key_back)
+{
+    
+    instance_create(x,y,obj_pressStart);
+    instance_destroy();
+}
 
 if(key_press)
 {
@@ -101,12 +111,14 @@ if(button &lt; 0)
 if(button == 0)
 {
     draw_sprite(spr_play,0,500, 300);
-    draw_sprite(spr_play,3,500, 500);
+    draw_sprite(spr_play,3,500, 400);
+    draw_sprite(spr_dentLarge,0, 300, 300);
 }
 else
 {
     draw_sprite(spr_play,1,500, 300);
-    draw_sprite(spr_play,2,500, 500);
+    draw_sprite(spr_play,2,500, 400);
+    draw_sprite(spr_dentLarge,0, 300, 400);
 }
 
 </string>

@@ -107,7 +107,7 @@ if (obj_playerBody.floatingAim = true)
 }
 else
 {
-    if (obj_scoreControl.stamina &lt; 10 &amp;&amp; contin)
+    if (obj_scoreControl.stamina &lt; obj_scoreControl.staminaMAX &amp;&amp; contin)
     {
         alarm[1] = 2;
         contin = false;

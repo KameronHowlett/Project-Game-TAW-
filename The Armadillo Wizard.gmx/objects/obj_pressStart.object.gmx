@@ -74,7 +74,19 @@ fade = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(fade == 1)
+            <string>key_skip = keyboard_check(vk_space) || (gamepad_button_check(0,gp_face1));
+
+if(key_skip)
+{
+    
+    instance_create(x,y,obj_mainMenu);
+    instance_destroy();
+}
+
+with(obj_Logos)
+image_alpha = 1;
+
+if(fade == 1)
 image_alpha += 0.01;
 </string>
           </argument>

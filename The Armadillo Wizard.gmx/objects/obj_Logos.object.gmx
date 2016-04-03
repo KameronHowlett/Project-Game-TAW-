@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = 500;
+            <string>display_set_gui_size(1000,800)
+
+x = 500;
 y = 400;
 
 act = 0;
@@ -37,6 +39,30 @@ image_yscale = 2;
 
 image_speed = 0;
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>211</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_sound</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>6</kind>
+            <sound>MainMusic</sound>
+          </argument>
+          <argument>
+            <kind>3</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -81,12 +107,12 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_skip = keyboard_check(vk_space) || (gamepad_button_check(0,gp_face1));
+            <string>key_fast = keyboard_check(vk_space) || (gamepad_button_check(0,gp_face1));
 
-if(key_skip)
-{
-    room_goto_next();
-}
+if(key_fast)
+room_speed = 600;
+if(!key_fast)
+room_speed = 60;
 
 if (act == 0)
 {
@@ -232,6 +258,7 @@ if(act == 12)
         image_index = 0;
         y = 300;
         image_alpha += 0.01;
+        act = 13;
         
         if(image_alpha == 1)
         instance_create(500,700,obj_pressStart);

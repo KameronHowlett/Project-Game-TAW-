@@ -3,7 +3,7 @@
   <spriteName>spr_bolder</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>20</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -68,7 +68,7 @@ if(place_meeting(x,y+vsp,obj_platform) || (place_meeting(x,y+vsp,obj_ice) &amp;&
         }
     }
 
-    if(place_meeting(x,y+vsp,obj_ice))
+    if(place_meeting(x,y+vsp,obj_ice)&amp;&amp; vsp &lt;= 3)
         {
             while (!place_meeting(x,y+sign(vsp),obj_ice))
             {

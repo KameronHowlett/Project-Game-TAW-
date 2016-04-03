@@ -50,26 +50,17 @@
             <kind>1</kind>
             <string>key_paused = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0,gp_start));
 
-if(key_paused &amp;&amp; instance_exists(obj_playerBody))
+if(key_paused)
 {
     if(!pause)
     {
         pause = 1;
-        room_goto(rm_pauseScreen);
-        //instance_deactivate_all(true);
+        instance_deactivate_all(true);
     }
     else
     {
+        instance_activate_all();
         pause = 0;
-        with(obj_partScreen)
-        {
-            part_system_destroy(partPulse_emit);
-        }
-        if(global.levelnumber == 1)
-        {
-            room_goto(rm_level1);
-            //instance_activate_all();
-        }
         
     }
 }
@@ -97,9 +88,9 @@ if(key_paused &amp;&amp; instance_exists(obj_playerBody))
             <kind>1</kind>
             <string>if(pause)
 {
-    //draw_set_colour(c_black);
-    //draw_rectangle(0,0,view_wport[0],view_hport[0],0);
-    //draw_set_halign(fa_center);
+    draw_set_colour(c_black);
+    draw_rectangle(0,0,view_wport[0],view_hport[0],0);
+    draw_set_halign(fa_center);
     
     draw_sprite(spr_titleLogo,0,500,100)
 

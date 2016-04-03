@@ -65,7 +65,7 @@ part_emitter_stream(partEngine2_sys,partEngine2_emit,partEngine2,5);
             <kind>1</kind>
             <string>image_speed = 0.2;
 
-x = obj_jetBeg.x - 40;
+x = obj_jetBeg.x - 50;
 y = obj_jetBeg.y + 15;
 
 image_angle = obj_jetBeg.angle;

@@ -30,6 +30,9 @@ global.levelnumber = 0;
 global.scorePoints = 0;
 global.playerLevel = 0;
 global.pointsMaximum = 1000;
+
+global.addHealth = 0;
+global.addStamina = 0;
 </string>
           </argument>
         </arguments>

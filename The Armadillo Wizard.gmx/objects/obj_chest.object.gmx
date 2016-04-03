@@ -3,7 +3,7 @@
   <spriteName>spr_chest</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>10</depth>
+  <depth>20</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,12 +25,21 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>open = false;
-loot = irandom(30);
+            <string>
+image_speed = 0;
+
+grav = 0.2;
+vsp = 0;
+
+open = false;
+loot = irandom(20);
 chance = irandom(20);
 
 if (loot &lt; 5)
 loot = 5;
+
+if (chance == 1)
+loot = 150;
 </string>
           </argument>
         </arguments>
@@ -53,7 +62,61 @@ loot = 5;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_pickup = keyboard_check_pressed(ord("Q")) || (gamepad_button_check_pressed(0,gp_face2));
+            <string>///go
+
+if(vsp &lt; 8)
+{
+       vsp += grav;//if under 10 keep adding gravity speed
+
+}
+
+if(place_meeting(x,y+vsp,obj_platform) || place_meeting(x,y+vsp,obj_ice) )
+{
+    if(place_meeting(x,y+vsp,obj_platform))
+    {
+        while (!place_meeting(x,y+sign(vsp),obj_platform))
+        {
+            y += sign(vsp)
+        }
+    }
+
+    if(place_meeting(x,y+vsp,obj_ice))
+        {
+            while (!place_meeting(x,y+sign(vsp),obj_ice))
+            {
+                y += sign(vsp)
+            }
+        }
+    vsp = 0;
+}
+y += vsp;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Looting
+key_pickup = keyboard_check_pressed(ord("Q")) || (gamepad_button_check_pressed(0,gp_face2));
+
+if(!open)
+image_index = 0;
+if(open)
+image_index = 1;
 
 if(key_pickup)
 {
@@ -84,32 +147,6 @@ else
         }
     }
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if(!open)
-draw_sprite(spr_chest,0,self.x,self.y);
-if(open)
-draw_sprite(spr_chest,1,self.x,self.y);
 </string>
           </argument>
         </arguments>

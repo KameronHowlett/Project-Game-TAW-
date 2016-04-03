@@ -26,6 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>planetSelect = 1;
+isPS = true;
+levelSelect = 0;
+isLS = false;
 </string>
           </argument>
         </arguments>
@@ -51,21 +54,56 @@
             <string>key_left = keyboard_check_pressed(ord("A")) || (gamepad_button_check_pressed(0,gp_face1));
 key_right = keyboard_check_pressed(ord("D")) || (gamepad_button_check_pressed(0,gp_face1));
 key_press = keyboard_check_pressed(vk_space);
-if(key_left)
+key_back = keyboard_check_pressed(vk_backspace);
+if(key_left &amp;&amp; isPS)
 {
     if(planetSelect != 1)
     planetSelect -= 1;
 }
 
-if(key_right)
+if(key_right &amp;&amp; isPS)
 {
     if(planetSelect != 3)
     planetSelect += 1;
 }
 
+if(key_left &amp;&amp; isLS)
+{
+    if(levelSelect != 0)
+    levelSelect -= 1;
+}
+
+if(key_right &amp;&amp; isLS)
+{
+    if(levelSelect != 5)
+    levelSelect += 1;
+}
+//Pressing space
 if(key_press)
 {
-    room_goto(rm_level1);
+    if(isLS &amp;&amp; planetSelect == 1)
+    {
+       room_goto(rm_level1);
+    }
+    
+    if(isPS)
+    {
+        isLS = true;
+        isPS = false;
+    }
+}
+//Pressing Back
+if(key_back)
+{
+    if(isPS)
+    {
+        room_goto(rm_logo);
+    }
+    if(isLS)
+    {
+       isLS = false;
+       isPS = true;
+    }
 }
 
 if(planetSelect == 1)
@@ -113,7 +151,13 @@ if(planetSelect == 3)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if(planetSelect == 1)
+            <string>if(isLS)
+{
+    draw_sprite(spr_highlight,0, 300 +(levelSelect * 80), 750);
+    if(planetSelect == 1)
+    draw_sprite(spr_levelImageWisdom,levelSelect,500,350);
+}
+if(planetSelect == 1)
 {
     draw_sprite(spr_levelPlanetNames,0,500, 650)
     draw_sprite(spr_levelWisdom,0,300,750)
@@ -170,6 +214,8 @@ if(planetSelect == 3)
 draw_sprite(spr_planets,1,300,room_height/2);
 draw_sprite(spr_planets,2,450,room_height/2);
 draw_sprite(spr_planets,3,700,room_height/2);
+
+draw_sprite(spr_planets,3 + planetSelect,planetSelect * 150,room_height/2);
 </string>
           </argument>
         </arguments>

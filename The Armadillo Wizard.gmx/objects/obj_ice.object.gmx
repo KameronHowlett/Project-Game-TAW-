@@ -26,7 +26,13 @@
           <argument>
             <kind>1</kind>
             <string>destroyed = false;
+image_speed = 0;
 image_alpha = 0.5;
+image_index = 0;
+rng = irandom(20);
+
+if(rng == 20)
+image_index = 1;
 </string>
           </argument>
         </arguments>
@@ -68,6 +74,35 @@ part_type_life(partHealthBlast,room_speed,room_speed);
 
 //Particle Emitter
 partHealthBlast_emit = part_emitter_create(partHealthBlast_sys);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(rng == 20)
+{
+    for (i = 0; i &lt; 2 + 1; i += 1)
+    {
+        instance_create(x,y-2,obj_rgem)
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -119,6 +154,54 @@ partHealthBlast_emit = part_emitter_create(partHealthBlast_sys);
             <string>///Particle Step
 part_emitter_region(partHealthBlast_sys,partHealthBlast_emit,x-2,x+2,y-2,y+2,0,0);
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_icePlatform">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(other.falling)
+destroyed = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_standCrab">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if(other.vsp &gt; 3)
+destroyed = true;
 </string>
           </argument>
         </arguments>
