@@ -32,7 +32,7 @@ moveSpeed = irandom(4);
 
 grav = 0.2;
 hsp = 0;
-vsp = irandom(8) * -1;
+vsp = irandom(6) * -1;
 </string>
           </argument>
         </arguments>
@@ -83,9 +83,9 @@ x += hsp;
 if(place_meeting(x,y+vsp,obj_platform))
 {
     if(dir &lt;= 0)
-    instance_create(self.x,self.y-8,obj_enemyLeft);
+    instance_create(self.x,self.y+(vsp * -1),obj_enemyLeft);
     if(dir &gt; 0)
-    instance_create(self.x,self.y-8,obj_enemyRight);
+    instance_create(self.x,self.y+(vsp * -1),obj_enemyRight);
     
     instance_destroy();
 }

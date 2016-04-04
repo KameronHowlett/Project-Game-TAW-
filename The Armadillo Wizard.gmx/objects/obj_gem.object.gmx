@@ -145,6 +145,7 @@ part_emitter_region(partGemBlast_sys,partGemBlast_emit,x-2,x+2,y-2,y+2,0,0);
           <argument>
             <kind>1</kind>
             <string>obj_scoreControl.scoreMax += 20;
+obj_scoreControl.scorePoints += 20;
 part_emitter_burst(partGemBlast_sys,partGemBlast_emit,partGemBlast,1);
 </string>
           </argument>

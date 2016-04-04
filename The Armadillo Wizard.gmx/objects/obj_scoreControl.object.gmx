@@ -27,7 +27,8 @@
             <kind>1</kind>
             <string>cOrange = make_color_rgb(215, 147, 855);
 scorePoints = 0;
-scoreMax = 0;
+doubleScore = 0;
+scoreMax = global.scorePoints;
 
 staminaMAX = 5 + global.addStamina;
 hpMAX = 3 + global.addHealth;
@@ -116,21 +117,26 @@ increase = true;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = obj_playerBody.x;
-y = obj_playerBody.y;
-
+            <string>
 staminaMAX = 5 + global.addStamina;
 hpMAX = 3 + global.addHealth;
 
 if(global.scorePoints &lt; scoreMax - 100)
+global.scorePoints += 100;
+else if(global.scorePoints &lt; scoreMax - 10)
 global.scorePoints += 10;
 else if (global.scorePoints &lt; scoreMax)
 global.scorePoints += 1;
 
 if(hp == 0)
 {
-    room_persistent = false;
-    room_restart();
+    if(!obj_playerBody.fail)
+    {
+        obj_playerBody.alarm[3] = 100;
+    }
+    obj_playerBody.fail = true;
+    //room_persistent = false;
+    //room_restart();
 }
 
 if(global.scorePoints &gt;= global.pointsMaximum)
@@ -153,6 +159,13 @@ else
 {
     image_speed = 0;   
     image_index = 0;
+}
+
+if(obj_playerBody.win == 1)
+{
+    doubleScore = scorePoints * 2;
+    scoreMax += scorePoints;
+    obj_playerBody.win = 2;
 }
 </string>
           </argument>

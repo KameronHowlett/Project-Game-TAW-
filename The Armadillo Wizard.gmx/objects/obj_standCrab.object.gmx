@@ -154,6 +154,12 @@ if(place_meeting(x+hsp,y,obj_platform) || place_meeting(x+hsp,y,obj_ice))
     
     dir *= -1;
 }
+
+if(place_meeting(x+hsp,y,obj_movingCollider))
+{   
+    dir *= -1;
+}
+
 x += hsp;
 
 image_xscale = dir;

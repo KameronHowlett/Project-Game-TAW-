@@ -11,6 +11,8 @@
     <sprites name="PlayerSprites">
       <sprite>sprites\spr_playerBody</sprite>
       <sprite>sprites\spr_playerBodyFall</sprite>
+      <sprite>sprites\spr_playerFail</sprite>
+      <sprite>sprites\spr_playerFail2</sprite>
       <sprite>sprites\spr_playerBodyBall</sprite>
       <sprite>sprites\spr_playerBodyWallSlide</sprite>
       <sprite>sprites\spr_playerBodyJumpUp</sprite>
@@ -103,20 +105,25 @@
     <sprite>sprites\spr_iceSpikes</sprite>
     <sprite>sprites\spr_icePlatform</sprite>
     <sprite>sprites\spr_levelEnd</sprite>
+    <sprite>sprites\spr_failText</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
+    <background>background\backgroundLevel2</background>
+    <background>background\background_level4</background>
     <background>background\Forground_close</background>
     <background>background\Forground_Far</background>
+    <background>background\forground_Cave</background>
+    <background>background\forground_CaveFar</background>
     <background>background\Fog1</background>
     <background>background\Fog2</background>
     <background>background\background9</background>
     <background>background\background4</background>
     <background>background\bck_stars</background>
+    <background>background\bck_planet</background>
     <background>background\bck_screen</background>
   </backgrounds>
   <paths name="paths"/>
-  <scripts name="scripts"/>
   <fonts name="fonts">
     <font>fonts\font_test</font>
     <font>fonts\fonr_Bunce</font>
@@ -129,10 +136,18 @@
     <object>objects\obj_icemask</object>
     <object>objects\obj_bolder</object>
     <object>objects\obj_movingCollider</object>
+    <object>objects\obj_movingPlatformH</object>
     <object>objects\obj_playerBody</object>
     <object>objects\obj_playerStaff</object>
-    <object>objects\obj_camera</object>
-    <object>objects\obj_backgroundControl</object>
+    <object>objects\obj_failMenu</object>
+    <object>objects\obj_winMenu</object>
+    <object>objects\obj_sun</object>
+    <objects name="Level Stuff">
+      <object>objects\obj_camera</object>
+      <object>objects\obj_backgroundControl</object>
+      <object>objects\obj_snow</object>
+      <object>objects\obj_pauseMenu</object>
+    </objects>
     <object>objects\obj_spike</object>
     <object>objects\obj_hive1</object>
     <object>objects\obj_enemyLeft</object>
@@ -152,10 +167,10 @@
     <object>objects\obj_title</object>
     <object>objects\obj_globalLevel</object>
     <object>objects\obj_scoreControl</object>
-    <object>objects\obj_movingPlatformH</object>
     <objects name="LogoStartObjects">
       <object>objects\obj_Logos</object>
       <object>objects\obj_partLogo</object>
+      <object>objects\obj_partmenu2</object>
       <object>objects\obj_logoShip</object>
       <object>objects\obj_shipEngines</object>
       <object>objects\obj_wing</object>
@@ -168,10 +183,8 @@
       <object>objects\obj_levelArrow</object>
       <object>objects\obj_mainMenu</object>
     </objects>
-    <object>objects\obj_pauseMenu</object>
     <object>objects\obj_partpause</object>
     <object>objects\obj_partScreen</object>
-    <object>objects\obj_snow</object>
     <objects name="Jet">
       <object>objects\obj_jetBeg</object>
       <object>objects\obj_engine2</object>
@@ -180,6 +193,8 @@
       <object>objects\obj_jetwing</object>
     </objects>
     <object>objects\obj_level1</object>
+    <object>objects\obj_level2</object>
+    <object>objects\obj_level4</object>
     <object>objects\obj_levelNames</object>
     <object>objects\obj_iceSpikes</object>
     <object>objects\obj_icePlatform</object>
@@ -188,9 +203,11 @@
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
     <room>rooms\rm_levelSelect</room>
-    <room>rooms\rm_Test</room>
     <room>rooms\rm_level1</room>
+    <room>rooms\rm_level2</room>
+    <room>rooms\rm_level4</room>
     <room>rooms\rm_pauseScreen</room>
+    <room>rooms\room7</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

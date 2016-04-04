@@ -21,5 +21,6 @@
   <height>800</height>
   <frames>
     <frame index="0">images\spr_fade_0.png</frame>
+    <frame index="1">images\spr_fade_1.png</frame>
   </frames>
 </sprite>

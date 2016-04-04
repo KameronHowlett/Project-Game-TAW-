@@ -79,13 +79,15 @@ contin = true;
 x = obj_playerBody.x;
 y = obj_playerBody.y;
 
+if(obj_playerBody.fail)
+instance_destroy();
 
 if(obj_playerBody.move != 0)
 dir = obj_playerBody.move;
 
 if(dir!=0) image_xscale = dir;
 
-if(obj_playerBody.jumps == 0)
+if(obj_playerBody.jumps == 0 || obj_playerBody.fail)
 {
     image_alpha = 0;
 }

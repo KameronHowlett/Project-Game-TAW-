@@ -55,6 +55,16 @@ isLS = false;
 key_right = keyboard_check_pressed(ord("D")) || (gamepad_button_check_pressed(0,gp_face1));
 key_press = keyboard_check_pressed(vk_space);
 key_back = keyboard_check_pressed(vk_backspace);
+
+if(isPS)
+{
+obj_levelArrow.image_alpha = 1;
+}
+if(isLS)
+{
+obj_levelArrow.image_alpha = 0;
+}
+
 if(key_left &amp;&amp; isPS)
 {
     if(planetSelect != 1)
@@ -81,9 +91,19 @@ if(key_right &amp;&amp; isLS)
 //Pressing space
 if(key_press)
 {
-    if(isLS &amp;&amp; planetSelect == 1)
+    if(isLS &amp;&amp; planetSelect == 1 &amp;&amp; levelSelect == 0)
     {
        room_goto(rm_level1);
+    }
+    
+    if(isLS &amp;&amp; planetSelect == 1 &amp;&amp; levelSelect == 1)
+    {
+       room_goto(rm_level2);
+    }
+    
+     if(isLS &amp;&amp; planetSelect == 1 &amp;&amp; levelSelect == 3)
+    {
+       room_goto(rm_level4);
     }
     
     if(isPS)
@@ -103,6 +123,7 @@ if(key_back)
     {
        isLS = false;
        isPS = true;
+       levelSelect = 0;
     }
 }
 
@@ -110,7 +131,7 @@ if(planetSelect == 1)
 {
     with(obj_levelArrow)
     {
-    x = 150;
+    x = 148;
     }
 }
 
@@ -155,7 +176,10 @@ if(planetSelect == 3)
 {
     draw_sprite(spr_highlight,0, 300 +(levelSelect * 80), 750);
     if(planetSelect == 1)
-    draw_sprite(spr_levelImageWisdom,levelSelect,500,350);
+    {
+        draw_sprite(spr_levelImageWisdom,levelSelect,500,350);
+        draw_sprite(spr_levelNames,levelSelect,500,120);
+    }
 }
 if(planetSelect == 1)
 {
@@ -213,7 +237,7 @@ if(planetSelect == 3)
             <string>draw_sprite(spr_planets,0,150,room_height/2);
 draw_sprite(spr_planets,1,300,room_height/2);
 draw_sprite(spr_planets,2,450,room_height/2);
-draw_sprite(spr_planets,3,700,room_height/2);
+draw_sprite(spr_planets,3,720,room_height/2);
 
 draw_sprite(spr_planets,3 + planetSelect,planetSelect * 150,room_height/2);
 </string>

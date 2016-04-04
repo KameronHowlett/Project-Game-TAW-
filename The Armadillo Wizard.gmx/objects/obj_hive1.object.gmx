@@ -192,7 +192,7 @@ if(place_meeting(x,y,obj_playerBody))
             {
                 damaged = true;
                 obj_scoreControl.hp -= 1;
-                alarm[0] = 100;
+                alarm[0] = 50;
             }
         }
     }

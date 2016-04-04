@@ -54,6 +54,10 @@ wsRight = false;
 damaged = false;
 wallMomentum = 0;
 
+fail = false;
+fail2 = false;
+win = 0;
+
 whichHat = 0;
 
 jetpack = false;
@@ -86,27 +90,32 @@ key_down = 0;
             <string>///When Start
 instance_create(1,1,obj_scoreControl);
 instance_create(1,1,obj_playerStaff);
+instance_create(1,1,obj_failMenu);
+instance_create(1,1,obj_winMenu);
 </string>
           </argument>
         </arguments>
       </action>
+    </event>
+    <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
-        <id>333</id>
-        <kind>0</kind>
+        <id>603</id>
+        <kind>7</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>0</useapplyto>
-        <exetype>1</exetype>
-        <functionname>action_save_game</functionname>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
           <argument>
-            <kind>2</kind>
-            <string>quickSave</string>
+            <kind>1</kind>
+            <string>fail2 = true;
+</string>
           </argument>
         </arguments>
       </action>
@@ -151,173 +160,16 @@ instance_create(1,1,obj_playerStaff);
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>///Do some animation
-if(hsp != 0)
-image_speed = (moveSpeed / 10)*2
-else
-image_speed = 0.2;
-
-if(place_meeting(x,y+1,obj_platform) || (place_meeting(x,y+1,obj_movingPlatformH)) || (place_meeting(x,y+1,obj_ice)) || (place_meeting(x,y+1,obj_bolder))|| (place_meeting(x,y+1,obj_standCrab)) )
-{
-    grounded = true;
-}
-else 
-{
-    grounded = false;
-}
-
-if(nearWallX == false &amp;&amp; grounded)
-{
-    if(hsp == 0 &amp;&amp; !floatingAim)
-    {
-      sprite_index = spr_playerBody;
-    }
-    else if(key_run)
-        {
-            if(sprite_index!=spr_playerBodyRun) image_index = 0;
-             sprite_index = spr_playerBodyRun;
-        }
-    else if (hsp != 0 &amp;&amp; !key_run)
-    {
-        if(sprite_index!=spr_playerBodyMove) image_index = 0;
-         sprite_index = spr_playerBodyMove;
-    }
-}
-else if (nearWallX == true &amp;&amp; grounded)
-{
-    if(key_right == 1 || key_left == -1)
-    {    
-      if(sprite_index!=spr_playerBodyCollide) image_index = 0;
-      sprite_index = spr_playerBodyCollide;
-    }
-    else
-    {
-        sprite_index = spr_playerBody;
-    }
-}
-
-//move
-
-if(move!=0) image_xscale = move;
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Jumping Animations
-
-if(!floatingAim)
-{
-    if(jumps &lt;= 0 &amp;&amp; !grounded)
-    {
-        if(sprite_index!=spr_playerBodyBall) image_index = 0;
-        sprite_index = spr_playerBodyBall;
-    }
-
-    if(jumps &gt; 0 &amp;&amp; !grounded)
-    {
-        if(vsp &gt; 0)
-        {
-        sprite_index = spr_playerBodyFall;
-        }
-        if(vsp &lt; 0)
-        {
-        sprite_index = spr_playerBodyJumpUp;
-        }
-    }
-}
-else
-{
-    if(sprite_index!=spr_playerStaffHold) image_index = 0;
-         sprite_index = spr_playerStaffHold;
-}
-
-if(wallSliding)
-{
- if(sprite_index!=spr_playerBodyWallSlide) image_index = 0;
-        sprite_index = spr_playerBodyWallSlide;
-}
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Picking Items up
-key_pickup = keyboard_check_pressed(ord("Q")) || (gamepad_button_check_pressed(0,gp_face2));
-key_drop = keyboard_check_pressed(ord("E")) || (gamepad_button_check_pressed(0,gp_face4));
-
-if(key_pickup)
-{
-    if (place_meeting(x,y,obj_jetpack) &amp;&amp; instance_exists(obj_jetpack))
-    {
-        obj_jetpack.equipped = true;
-    }
-}
-
-if(key_drop)
-{
-    if((obj_jetpack.equipped == true &amp;&amp; grounded) &amp;&amp; instance_exists(obj_jetpack))
-    {
-        obj_jetpack.lasting = 0;
-    }
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>///Moving Code
 
-
-
+if(win != 0)
+{ 
+    image_speed = 0;
+    exit;
+}
 // equals 0 or 1
+if(!fail)
+{
 key_right = keyboard_check(ord("D")) || (gamepad_axis_value(0,gp_axislh) &gt; 0);
 // equals -1 or 0
 key_left = -(keyboard_check(ord("A")) || (gamepad_axis_value(0,gp_axislh) &lt; 0));
@@ -326,13 +178,27 @@ key_jumpjet = keyboard_check(ord("W")) || (gamepad_button_check(0,gp_face1));
 key_aimStaff = mouse_check_button(mb_right) || (gamepad_button_check(0,gp_shoulderr));
 key_run = keyboard_check(vk_lshift);
 key_down = keyboard_check(ord("S")) || (gamepad_axis_value(0,gp_axislv) &gt; 0);
+}
+else
+{
+key_right = 0;
+key_left = 0;
+key_jump = 0;
+key_jumpjet = 0;
+key_aimStaff = 0;
+key_run = 0;
+key_down = 0;
+}
+
 
 if(damaged)
 {
-    image_alpha = 0.5;
-    if(hit == 0)
-    hit = 1;
-    
+    if(!fail)
+    {
+        image_alpha = 0.5;
+        if(hit == 0)
+        hit = 1;
+    }
 }
 else
 {
@@ -354,7 +220,7 @@ if(wallMomentum == 0)
 
 if(grounded) 
 {   
-    if(key_run)
+    if(key_run &amp;&amp; !fail)
     {
      moveSpeed = sprintSpeed;
     }
@@ -549,7 +415,7 @@ if (instance_exists(obj_jetpack))
 }
     
 //WALL JUMPING 2
-if (key_jump)
+if (key_jump &amp;&amp; !fail)
 {
     if(wallSliding)
     {
@@ -631,6 +497,208 @@ obj_scoreControl.hp = 0;
 
 
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Do some animation
+
+if(hsp != 0)
+image_speed = (moveSpeed / 10)*2
+else
+image_speed = 0.2;
+
+if(place_meeting(x,y+1,obj_platform) || (place_meeting(x,y+1,obj_movingPlatformH)) || (place_meeting(x,y+1,obj_ice)) || (place_meeting(x,y+1,obj_bolder))|| (place_meeting(x,y+1,obj_standCrab)) )
+{
+    grounded = true;
+}
+else 
+{
+    grounded = false;
+}
+
+if(nearWallX == false &amp;&amp; grounded)
+{
+    if(hsp == 0 &amp;&amp; !floatingAim)
+    {
+      sprite_index = spr_playerBody;
+    }
+    else if(key_run)
+        {
+            if(sprite_index!=spr_playerBodyRun) image_index = 0;
+             sprite_index = spr_playerBodyRun;
+        }
+    else if (hsp != 0 &amp;&amp; !key_run)
+    {
+        if(sprite_index!=spr_playerBodyMove) image_index = 0;
+         sprite_index = spr_playerBodyMove;
+    }
+}
+else if (nearWallX == true &amp;&amp; grounded)
+{
+    if(key_right == 1 || key_left == -1)
+    {    
+      if(sprite_index!=spr_playerBodyCollide) image_index = 0;
+      sprite_index = spr_playerBodyCollide;
+    }
+    else
+    {
+        sprite_index = spr_playerBody;
+    }
+}
+
+//move
+
+if(move!=0) image_xscale = move;
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Jumping Animations
+
+if(!floatingAim)
+{
+    if(jumps &lt;= 0 &amp;&amp; !grounded)
+    {
+        if(sprite_index!=spr_playerBodyBall) image_index = 0;
+        sprite_index = spr_playerBodyBall;
+    }
+
+    if(jumps &gt; 0 &amp;&amp; !grounded &amp;&amp; !fail)
+    {
+        if(vsp &gt; 0)
+        {
+        sprite_index = spr_playerBodyFall;
+        }
+        if(vsp &lt; 0)
+        {
+        sprite_index = spr_playerBodyJumpUp;
+        }
+    }
+    if(vsp != 0 &amp;&amp; fail)
+    {
+        sprite_index = spr_playerFail;
+    }
+    if(grounded &amp;&amp; fail)
+    {
+    sprite_index = spr_playerFail2;
+    move = 0;
+    }
+}
+else
+{
+    if(sprite_index!=spr_playerStaffHold) image_index = 0;
+         sprite_index = spr_playerStaffHold;
+}
+
+if(wallSliding)
+{
+ if(sprite_index!=spr_playerBodyWallSlide) image_index = 0;
+        sprite_index = spr_playerBodyWallSlide;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Picking Items up
+
+key_pickup = keyboard_check_pressed(ord("Q")) || (gamepad_button_check_pressed(0,gp_face2));
+key_drop = keyboard_check_pressed(ord("E")) || (gamepad_button_check_pressed(0,gp_face4));
+
+
+if(instance_exists(obj_jetpack))
+{
+if(key_pickup)
+{
+    if (place_meeting(x,y,obj_jetpack))
+    {
+        obj_jetpack.equipped = true;
+    }
+}
+
+if(key_drop)
+{
+    if((obj_jetpack.equipped == true &amp;&amp; grounded))
+    {
+        obj_jetpack.lasting = 0;
+    }
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_finish">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if(win == 0)
+win = 1;
 </string>
           </argument>
         </arguments>

@@ -69,8 +69,7 @@ if(phase == 2)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>part_system_destroy(partEngine_sys);
-part_system_destroy(partEngine2_sys);
+            <string>part_system_destroy(partEngine2_sys);
 </string>
           </argument>
         </arguments>
@@ -110,44 +109,6 @@ part_type_speed(partEngine2,5,5,0,0);
 partEngine2_emit = part_emitter_create(partEngine2_sys);
 
 part_emitter_stream(partEngine2_sys,partEngine2_emit,partEngine2,5);
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>///Engine
-partEngine_sys = part_system_create();
-
-partEngine = part_type_create();
-part_type_shape(partEngine,spr_partPixel);
-part_type_sprite(partEngine,spr_partPixel,false,false,false);
-part_type_size(partEngine,20,20,-0.01,0);
-part_type_colour1(partEngine,c_aqua);
-part_type_alpha2(partEngine,.1,.1);
-part_type_life(partEngine,room_speed,room_speed *2);
-part_type_direction(partEngine, 180,180,0,0);
-part_type_speed(partEngine,10,10,0,0);
-
-
-partEngine_emit = part_emitter_create(partEngine_sys);
-
-part_emitter_stream(partEngine_sys,partEngine_emit,partEngine,1);
 
 </string>
           </argument>

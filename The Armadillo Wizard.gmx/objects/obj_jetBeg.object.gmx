@@ -173,6 +173,7 @@ if(act == 3)
 {
     hsp += 1;
     vsp -= 1;
+    image_angle += 1;
 }
 </string>
           </argument>

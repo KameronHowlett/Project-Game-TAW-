@@ -29,7 +29,7 @@
 image_speed = 0.2;
 image = irandom(7);
 dir = irandom(1);
-speedH = random_range(0,4);
+speedH = random_range(0,2);
 hsp = 0;
 draw = true;
 move = 1;
@@ -63,7 +63,7 @@ collectable = false;
             <string>///Paticles
 
 partGemBlast_sys = part_system_create();
-part_system_depth(partGemBlast_sys, 2000000);
+part_system_depth(partGemBlast_sys, 1500000);
 //Particles
 partGemBlast = part_type_create();
 part_type_shape(partGemBlast,spr_partnum2);
@@ -203,6 +203,7 @@ part_emitter_region(partGemBlast_sys,partGemBlast_emit,x-2,x+2,y-2,y+2,0,0);
 if(collectable == true)
 {
     obj_scoreControl.scoreMax += 50;
+    obj_scoreControl.scorePoints += 50;
     part_emitter_burst(partGemBlast_sys,partGemBlast_emit,partGemBlast,1);
     instance_destroy();
 }

@@ -129,7 +129,7 @@ y += vsp;
             <string>if(instance_exists(obj_playerBody))
 {
     //if (distance_to_object(obj_playerBody) &lt; range) &amp;&amp; self.y &lt; obj_playerBody.y &amp;&amp; 
-    if collision_line(x,y+8,x+16,y+80,obj_playerBody,false,false)
+    if collision_line(x,y+8,x+16,y+100,obj_playerBody,false,false)
     {
     falling = true;
     }
@@ -142,6 +142,113 @@ if(destroyed == true)
     part_emitter_burst(partHealthBlast_sys,partHealthBlast_emit,partHealthBlast,10);
     instance_destroy();
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_movingPlatformH">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>destroyed = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_enemyRight">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other)
+{
+myHealth -= 100;
+}
+
+destroyed = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_enemyLeft">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other)
+{
+myHealth -= 100;
+}
+
+destroyed = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="4" ename="obj_hive1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>with(other)
+{
+myHealth -= 2;
+}
+
+destroyed = true;
 </string>
           </argument>
         </arguments>
@@ -226,7 +333,7 @@ destroyed = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_ice">
+    <event eventtype="4" ename="obj_oneWayPlatform">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -249,7 +356,7 @@ destroyed = true;
         </arguments>
       </action>
     </event>
-    <event eventtype="4" ename="obj_oneWayPlatform">
+    <event eventtype="4" ename="obj_ice">
       <action>
         <libid>1</libid>
         <id>603</id>
