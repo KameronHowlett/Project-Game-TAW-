@@ -100,7 +100,7 @@ partHealthBlast_emit = part_emitter_create(partHealthBlast_sys);
 {
     for (i = 0; i &lt; 2 + 1; i += 1)
     {
-        instance_create(x,y-2,obj_rgem)
+        instance_create(x+8,y+8,obj_rgem)
     }
 }
 </string>
