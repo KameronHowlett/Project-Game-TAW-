@@ -32,10 +32,10 @@ partEngine2 = part_type_create();
 part_type_shape(partEngine2,spr_partPixel);
 part_type_sprite(partEngine2,spr_partOrb,false,false,false);
 part_type_size(partEngine2,0.5,1,-0.05,0);
-part_type_colour3(partEngine2,c_white,c_aqua,c_aqua);
+part_type_colour3(partEngine2,c_white,c_white,c_aqua);
 part_type_alpha2(partEngine2,.8,0);
-part_type_life(partEngine2,room_speed/2,room_speed/2);
-part_type_speed(partEngine2,5,5,0,0);
+part_type_life(partEngine2,room_speed/4,room_speed/4);
+part_type_speed(partEngine2,6,6,0,0);
 
 partEngine2_emit = part_emitter_create(partEngine2_sys);
 
@@ -72,7 +72,7 @@ image_angle = obj_jetBeg.angle;
 
 //part_emitter_region(partEngine_sys,partEngine_emit,self.x-130,self.x-130,self.y-15,self.y-15,ps_shape_rectangle,ps_distr_linear);
 part_type_direction(partEngine2, obj_jetBeg.angle,obj_jetBeg.angle,0,1);
-part_emitter_region(partEngine2_sys,partEngine2_emit,self.x - 10,self.x - 2,self.y,self.y,ps_shape_rectangle,ps_distr_linear);
+part_emitter_region(partEngine2_sys,partEngine2_emit,self.x - 10,self.x,self.y,self.y,ps_shape_rectangle,ps_distr_linear);
 part_system_depth( partEngine2_sys, -110 );
 </string>
           </argument>

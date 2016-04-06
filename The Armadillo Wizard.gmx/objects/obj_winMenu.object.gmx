@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>
-key_back = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0,gp_face1));
+key_back = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0,gp_face4));
 
 if(obj_playerBody.win == 2 &amp;&amp; key_back)
 { 
@@ -101,6 +101,7 @@ if(obj_playerBody.win == 2 &amp;&amp; key_back)
             <string>
 if(obj_playerBody.win &gt; 0)
 {    
+    draw_text(200,230,"Press Y to reutrn to menu"); 
     draw_sprite(spr_failText,1,view_wport[0]/2,view_hport[0]/2 + 100);
     draw_text(200,600,"You Earned [x2] -");
     draw_text(600,600,obj_scoreControl.scorePoints);

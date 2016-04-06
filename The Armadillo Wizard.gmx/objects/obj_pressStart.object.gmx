@@ -74,7 +74,7 @@ fade = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_skip = keyboard_check(vk_space) || (gamepad_button_check(0,gp_face1));
+            <string>key_skip = keyboard_check(vk_space) || (gamepad_button_check(0,gp_start));
 
 if(key_skip)
 {

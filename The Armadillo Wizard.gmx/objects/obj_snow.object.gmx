@@ -34,7 +34,7 @@ part_type_sprite(partSnow,spr_partPixel,false,false,false);
 part_type_size(partSnow,0.5,1,0,0);
 part_type_colour1(partSnow,c_white);
 part_type_alpha2(partSnow,1,0);
-part_type_life(partSnow,room_speed*50,room_speed *100)
+part_type_life(partSnow,room_speed*50,room_speed *60)
 part_type_speed(partSnow,0.1,0.5,0,0);
 part_type_direction(partSnow,270,270,0,0);
 
@@ -49,6 +49,30 @@ repeat (room_speed * 30)
 {
     part_system_update(partSnow_sys);
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>part_system_destroy(partSnow_sys);
+part_particles_clear(partSnow_emit);
 </string>
           </argument>
         </arguments>

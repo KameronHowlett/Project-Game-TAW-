@@ -56,9 +56,13 @@ if(key_paused)
     {
         pause = 1;
         instance_deactivate_all(true);
+        instance_create(x,y,obj_pauseButtons);
     }
     else
     {
+        with(obj_pauseButtons)
+        instance_destroy();
+        
         instance_activate_all();
         pause = 0;
         
@@ -89,7 +93,7 @@ if(key_paused)
             <string>if(pause)
 {
     draw_set_colour(c_black);
-    draw_rectangle(0,0,view_wport[0],view_hport[0],0);
+    //draw_rectangle(0,0,view_wport[0],view_hport[0],0);
     draw_set_halign(fa_center);
     
     draw_sprite(spr_titleLogo,0,500,100)

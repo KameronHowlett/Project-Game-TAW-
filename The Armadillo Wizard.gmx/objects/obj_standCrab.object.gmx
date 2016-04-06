@@ -134,7 +134,7 @@ if(myHealth &lt;= 0)
 }
 
 
-if(place_meeting(x+hsp,y,obj_platform) || place_meeting(x+hsp,y,obj_ice))
+if(place_meeting(x+hsp,y,obj_platform) || place_meeting(x+hsp,y,obj_ice)|| place_meeting(x+hsp,y,obj_bolder))
 {
     if(place_meeting(x+hsp,y,obj_platform))
     {
@@ -146,6 +146,13 @@ if(place_meeting(x+hsp,y,obj_platform) || place_meeting(x+hsp,y,obj_ice))
     if(place_meeting(x+hsp,y,obj_ice))
     {
         while(!place_meeting(x+sign(hsp),y,obj_ice))
+        {
+            x += sign(hsp);
+        }
+    }
+    if(place_meeting(x+hsp,y,obj_bolder))
+    {
+        while(!place_meeting(x+sign(hsp),y,obj_bolder))
         {
             x += sign(hsp);
         }

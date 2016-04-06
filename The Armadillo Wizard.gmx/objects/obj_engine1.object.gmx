@@ -54,10 +54,10 @@ partEngine2 = part_type_create();
 part_type_shape(partEngine2,spr_partPixel);
 part_type_sprite(partEngine2,spr_partOrb,false,false,false);
 part_type_size(partEngine2,0.5,1,-0.05,0);
-part_type_colour3(partEngine2,c_white,c_aqua,c_aqua);
+part_type_colour3(partEngine2,c_white,c_white,c_aqua);
 part_type_alpha2(partEngine2,.8,0);
-part_type_life(partEngine2,room_speed,room_speed);
-part_type_speed(partEngine2,5,5,0,0);
+part_type_life(partEngine2,room_speed/4,room_speed/4);
+part_type_speed(partEngine2,6,6,0,0);
 
 
 partEngine2_emit = part_emitter_create(partEngine2_sys);

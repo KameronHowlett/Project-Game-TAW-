@@ -51,10 +51,10 @@ isLS = false;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_left = keyboard_check_pressed(ord("A")) || (gamepad_button_check_pressed(0,gp_face1));
-key_right = keyboard_check_pressed(ord("D")) || (gamepad_button_check_pressed(0,gp_face1));
-key_press = keyboard_check_pressed(vk_space);
-key_back = keyboard_check_pressed(vk_backspace);
+            <string>key_left = keyboard_check_pressed(ord("A")) || (gamepad_button_check_pressed(0,gp_padl));
+key_right = keyboard_check_pressed(ord("D")) || (gamepad_button_check_pressed(0,gp_padr));
+key_press = keyboard_check_pressed(vk_space) || (gamepad_button_check_pressed(0,gp_face1));
+key_back = keyboard_check_pressed(vk_backspace) || (gamepad_button_check_pressed(0,gp_face4));
 
 if(isPS)
 {
@@ -99,6 +99,10 @@ if(key_press)
     if(isLS &amp;&amp; planetSelect == 1 &amp;&amp; levelSelect == 1)
     {
        room_goto(rm_level2);
+    }
+    if(isLS &amp;&amp; planetSelect == 1 &amp;&amp; levelSelect == 2)
+    {
+       room_goto(rm_level3);
     }
     
      if(isLS &amp;&amp; planetSelect == 1 &amp;&amp; levelSelect == 3)

@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>///Variables
+
 dir = -1;
 jetting = false;
 equipped = false;
@@ -33,6 +34,8 @@ lasting = 100;
 
 startx = x;
 starty = y;
+
+draw_sprite(spr_jetpack, 3,startx,starty);
 </string>
           </argument>
         </arguments>
@@ -62,14 +65,13 @@ part_system_depth(partFire_sys, 3);
 //Particle
 partFire = part_type_create();
 part_type_shape(partFire,spr_partPixel);
-part_type_sprite(partFire,spr_partPixel,false,false,false);
-part_type_size(partFire,1,2,-0.001,1);
-part_type_colour1(partFire,c_blue);
-part_type_alpha2(partFire, 0.9,0.5);
-part_type_speed(partFire, 0,0.5,0,0);
-part_type_direction(partFire,270,270,0,0);
-part_type_gravity(partFire, 0.002, 270);
-part_type_life(partFire,room_speed,room_speed*2);
+part_type_sprite(partFire,spr_partOrb,false,false,false);
+part_type_size(partFire,0,1,-0.02,0);
+part_type_colour2(partFire,c_orange, c_yellow);
+part_type_alpha2(partFire, 0.5,0);
+part_type_speed(partFire, 1,0.1,-0.01,0);
+part_type_direction(partFire,260,280,0,0);
+part_type_life(partFire,room_speed,room_speed * 2);
 
 //Paticle Emitter
 partFire_emit = part_emitter_create(partFire_sys);
@@ -83,13 +85,13 @@ part_system_depth(partSmoke_sys, 1500000);
 //Particle
 partSmoke = part_type_create();
 part_type_shape(partSmoke,spr_partPixel);
-part_type_sprite(partSmoke,spr_partOrb,false,false,false);
-part_type_size(partSmoke,0.1,0.4,-0.005,0);
-part_type_colour3(partSmoke,c_white,c_aqua,c_aqua);
+part_type_sprite(partSmoke,spr_smoke,false,false,false);
+part_type_size(partSmoke,0,1,-0.01,0);
+part_type_colour2(partSmoke,c_dkgray, c_gray);
 part_type_alpha2(partSmoke, 0.5,0);
-part_type_speed(partSmoke, 0,0.5,-0.001,0);
-part_type_direction(partSmoke,250,290,0,0);
-//part_type_gravity(partSmoke, 0.002, 270);
+part_type_speed(partSmoke, 1,0.1,-0.01,0);
+part_type_direction(partSmoke,260,280,0,0);
+part_type_orientation(partSmoke,0,360,+1,1,true);
 part_type_life(partSmoke,room_speed,room_speed * 2);
 
 //Paticle Emitter
@@ -131,7 +133,7 @@ if(equipped)
 
     image_xscale = dir;
 
-    if(obj_playerBody.jumps == 0)
+    if(obj_playerBody.jumps == 0 || obj_playerBody.fail &gt; 0)
     {
         image_alpha = 0;
     }
@@ -143,11 +145,11 @@ if(equipped)
     if(jetting &amp;&amp; obj_playerBody.jetfuel &gt; 0)
     {
         image_index = 2;
-       // part_emitter_region(partFire_sys,partFire_emit,x -(11 * dir),x -(11 * dir),y+8,y+8,ps_shape_ellipse,ps_distr_linear);
-        //part_emitter_burst(partFire_sys,partFire_emit,partFire,8);
+        part_emitter_region(partFire_sys,partFire_emit,x -(11 * dir),x -(11 * dir),y+8,y+8,ps_shape_ellipse,ps_distr_linear);
+        part_emitter_burst(partFire_sys,partFire_emit,partFire,3);
         
         part_emitter_region(partSmoke_sys,partSmoke_emit,x -(11 * dir),x -(11 * dir),y+12,y+12,ps_shape_ellipse,ps_distr_linear);
-        part_emitter_burst(partSmoke_sys,partSmoke_emit,partSmoke,30);
+        part_emitter_burst(partSmoke_sys,partSmoke_emit,partSmoke,3);
     }
     else
     {

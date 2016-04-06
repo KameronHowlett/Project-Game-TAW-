@@ -123,6 +123,9 @@ if(place_meeting(x,y+vsp,obj_ice))
         y += sign(vsp)
     }
     vsp = 0;
+    
+    if(!place_meeting(x+hsp * 16,y+8,obj_platform) &amp;&amp; !place_meeting(x+hsp* 16,y+8,obj_ice))
+    dir *= -1;
 }
 
 x += hsp;
@@ -136,6 +139,8 @@ if(place_meeting(x,y+vsp,obj_platform))
         y += sign(vsp)
     }
     vsp = 0;
+    if(!place_meeting(x+hsp * 16,y+8,obj_platform) &amp;&amp; !place_meeting(x+hsp* 16,y+8,obj_ice))
+    dir *= -1;
 }
 y += vsp;
 
@@ -152,6 +157,7 @@ if(place_meeting(x,y,obj_playerBody))
     }
     else
     {
+    dir *= -1;
         with(obj_playerBody)
         {
             if(damaged == false)
@@ -159,6 +165,7 @@ if(place_meeting(x,y,obj_playerBody))
                 damaged = true;
                 obj_scoreControl.hp -= 1;
                 alarm[0] = 100;
+                
             }
         }
     }

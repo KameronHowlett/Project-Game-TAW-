@@ -117,11 +117,6 @@ if(vsp &lt; 10)
 if(place_meeting(x+hsp,y,obj_platform))
 {
 //sign returns 1 or -1 depending on whether hsp is posative or negative, so as long as it isn't one pixel away continue
-    while(!place_meeting(x+sign(hsp),y,obj_platform))
-    {
-    //move by 1 or -1
-        x += sign(hsp);
-    }
     collectable = true;
     hsp = 0;
 }
@@ -129,11 +124,6 @@ if(place_meeting(x+hsp,y,obj_platform))
 if(place_meeting(x+hsp,y,obj_wall) || place_meeting(x+hsp,y,obj_ice) || place_meeting(x+hsp,y,obj_bolder))
 {
 //sign returns 1 or -1 depending on whether hsp is posative or negative, so as long as it isn't one pixel away continue
-    while(!place_meeting(x+sign(hsp),y,obj_wall))
-    {
-    //move by 1 or -1
-        x += sign(hsp);
-    }
     collectable = true;
     hsp = 0;
 }
@@ -141,12 +131,8 @@ if(place_meeting(x+hsp,y,obj_wall) || place_meeting(x+hsp,y,obj_ice) || place_me
 
 x += hsp;
 
-if(place_meeting(x,y+vsp,obj_platform))
+if(place_meeting(x,y+vsp,obj_platform)|| place_meeting(x+hsp,y,obj_ice) || place_meeting(x+hsp,y,obj_bolder))
 {
-    while(!place_meeting(x,y+sign(vsp), obj_platform))
-    {
-        y += sign(vsp);
-    }
     collectable = true;
     hsp = 0;
     vsp = 0;   

@@ -102,14 +102,18 @@
     <sprite>sprites\spr_statIncrease</sprite>
     <sprite>sprites\spr_fade</sprite>
     <sprite>sprites\spr_spikes</sprite>
+    <sprite>sprites\spr_spikeWall</sprite>
     <sprite>sprites\spr_iceSpikes</sprite>
     <sprite>sprites\spr_icePlatform</sprite>
     <sprite>sprites\spr_levelEnd</sprite>
     <sprite>sprites\spr_failText</sprite>
+    <sprite>sprites\spr_menupause</sprite>
+    <sprite>sprites\spr_controller</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
     <background>background\backgroundLevel2</background>
+    <background>background\background_level3</background>
     <background>background\background_level4</background>
     <background>background\Forground_close</background>
     <background>background\Forground_Far</background>
@@ -127,6 +131,7 @@
   <fonts name="fonts">
     <font>fonts\font_test</font>
     <font>fonts\fonr_Bunce</font>
+    <font>fonts\font_Speech</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_platform</object>
@@ -142,6 +147,7 @@
     <object>objects\obj_failMenu</object>
     <object>objects\obj_winMenu</object>
     <object>objects\obj_sun</object>
+    <object>objects\obj_pauseButtons</object>
     <objects name="Level Stuff">
       <object>objects\obj_camera</object>
       <object>objects\obj_backgroundControl</object>
@@ -149,6 +155,7 @@
       <object>objects\obj_pauseMenu</object>
     </objects>
     <object>objects\obj_spike</object>
+    <object>objects\obj_spikeWall</object>
     <object>objects\obj_hive1</object>
     <object>objects\obj_enemyLeft</object>
     <object>objects\obj_enemyRight</object>
@@ -194,6 +201,7 @@
     </objects>
     <object>objects\obj_level1</object>
     <object>objects\obj_level2</object>
+    <object>objects\obj_level3</object>
     <object>objects\obj_level4</object>
     <object>objects\obj_levelNames</object>
     <object>objects\obj_iceSpikes</object>
@@ -205,6 +213,7 @@
     <room>rooms\rm_levelSelect</room>
     <room>rooms\rm_level1</room>
     <room>rooms\rm_level2</room>
+    <room>rooms\rm_level3</room>
     <room>rooms\rm_level4</room>
     <room>rooms\rm_pauseScreen</room>
     <room>rooms\room7</room>

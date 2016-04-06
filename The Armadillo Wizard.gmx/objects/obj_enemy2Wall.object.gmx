@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// Intialize Variables
+
 image_speed = 0.02;
 
 grav = 0.2;
@@ -37,7 +38,7 @@ loot = irandom(10);
 
 canShoot = true;
 
-range = 100;
+range = 130;
 </string>
           </argument>
         </arguments>
@@ -83,10 +84,14 @@ range = 100;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>image_xscale = dir;
+            <string>
+
+image_xscale = dir;
 if(distance_to_object(obj_playerBody) &lt; range &amp;&amp; canShoot)
 {
-    instance_create(x,y,obj_enemyShot);
+    var ball;
+    ball = instance_create(x,y,obj_enemyShot);
+    
     canShoot = false;
     alarm[0] = 100;
 }
@@ -126,7 +131,7 @@ if(place_meeting(x,y,obj_playerBody))
             if(damaged == false)
             {
                 damaged = true;
-                obj_scoreControl.hp -= 10;
+                obj_scoreControl.hp -= 1;
                 alarm[0] = 100;
             }
         }

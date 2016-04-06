@@ -37,7 +37,7 @@ loot = irandom(10);
 
 canShoot = true;
 
-range = 100;
+range = 130;
 </string>
           </argument>
         </arguments>
@@ -89,7 +89,9 @@ vsp += grav;
 
 if(distance_to_object(obj_playerBody) &lt; range &amp;&amp; canShoot)
 {
-    instance_create(x,y,obj_enemyShot);
+    var ball;
+    ball = instance_create(x,y,obj_enemyShot);
+    
     canShoot = false;
     alarm[0] = 200;
 }
@@ -134,7 +136,7 @@ if(place_meeting(x,y,obj_playerBody))
             if(damaged == false)
             {
                 damaged = true;
-                obj_scoreControl.hp -= 10;
+                obj_scoreControl.hp -= 1;
                 alarm[0] = 100;
             }
         }

@@ -26,6 +26,8 @@
           <argument>
             <kind>1</kind>
             <string>display_set_gui_size(1000,800)
+gamepad_set_axis_deadzone(0,0.5);
+display_reset(0, false);
 
 x = 500;
 y = 400;
@@ -107,7 +109,7 @@ image_speed = 0;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_fast = keyboard_check(vk_space) || (gamepad_button_check(0,gp_face1));
+            <string>key_fast = keyboard_check(vk_space) || (gamepad_button_check(0,gp_shoulderlb));
 
 if(key_fast)
 room_speed = 600;
@@ -193,6 +195,7 @@ if(act == 4)
 if(act == 5)
 {
     sprite_index = spr_createdby;
+    image_index = 0;
     image_alpha += 0.01;
     if(image_alpha == 1)
     {
@@ -213,6 +216,7 @@ if(act == 6)
 if(act == 7)
 {
     sprite_index = spr_createdby;
+    image_index = 1;
     image_alpha += 0.01;
     if(image_alpha == 1)
     {
@@ -225,7 +229,7 @@ if(act == 8)
     image_alpha -= 0.01;
     if(image_alpha == 0)
     {
-        alarm[0] = 50;
+        alarm[0] = 65;
 
     }
 }
@@ -233,7 +237,8 @@ if(act == 8)
 if(act == 9)
 {
     sprite_index = spr_createdby;
-    image_alpha += 0.01;
+    image_index = 2;
+    image_alpha += 0.008;
     if(image_alpha == 1)
     {
         act = 10;
@@ -242,7 +247,7 @@ if(act == 9)
 
 if(act == 10)
 {
-    image_alpha -= 0.01;
+    image_alpha -= 0.008;
     if(image_alpha == 0)
     {
         act = 11;

@@ -59,16 +59,19 @@ loot = irandom(10);
           <argument>
             <kind>1</kind>
             <string>
-
 hsp = dir * moveSpeed;
+
+
 vsp += grav;
 
 if(myHealth &lt;= 0)
 {
+
     for (i = 0; i &lt; rng + 1; i += 1)
     {
         instance_create(x,y-2,obj_rgem)
     }
+    
     if(loot == 8)
     instance_create(x,y-2,obj_healthkit)
     
@@ -86,6 +89,29 @@ if(place_meeting(x+hsp,y,obj_platform))
     
     dir *= -1;
 }
+
+if(place_meeting(x+hsp,y,obj_movingCollider))
+{   
+    dir *= -1;
+}
+
+if(place_meeting(x+hsp,y,obj_ice))
+{   
+    dir *= -1;
+}
+
+if(place_meeting(x,y+vsp,obj_ice))
+{
+    while (!place_meeting(x,y+sign(vsp),obj_ice))
+    {
+        y += sign(vsp)
+    }
+    vsp = 0;
+    
+    if(!place_meeting(x+hsp * 16,y+8,obj_platform) &amp;&amp; !place_meeting(x+hsp* 16,y+8,obj_ice)&amp;&amp; !place_meeting(x+hsp* 16,y+8,obj_bolder))
+    dir *= -1;
+}
+
 x += hsp;
 
 image_xscale = dir;
@@ -97,6 +123,8 @@ if(place_meeting(x,y+vsp,obj_platform))
         y += sign(vsp)
     }
     vsp = 0;
+    if(!place_meeting(x+hsp * 16,y+8,obj_platform) &amp;&amp; !place_meeting(x+hsp* 16,y+8,obj_ice) &amp;&amp; !place_meeting(x+hsp* 16,y+8,obj_bolder))
+    dir *= -1;
 }
 y += vsp;
 
@@ -108,18 +136,6 @@ if(place_meeting(x,y,obj_playerBody))
         {
         vsp = -10;
         jumps = 1;
-        }
-    }
-    else
-    {
-        with(obj_playerBody)
-        {
-            if(damaged == false)
-            {
-                damaged = true;
-                obj_scoreControl.hp -= 1;
-                alarm[0] = 100;
-            }
         }
     }
 }

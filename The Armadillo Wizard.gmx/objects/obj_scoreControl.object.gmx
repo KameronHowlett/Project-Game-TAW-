@@ -68,6 +68,22 @@ if (global.playerLevel == 2)
     
 if (global.playerLevel == 3)
     global.addHealth += 1;
+    
+if (global.playerLevel == 4)
+    global.addStamina += 1;
+    
+if (global.playerLevel == 5)
+    global.addHealth += 1;
+    
+if (global.playerLevel == 6)
+    global.addStamina += 1;
+    
+if (global.playerLevel == 7)
+    global.addStamina += 1;
+    
+if (global.playerLevel == 8)
+    global.addHealth += 1;
+    
 increase = false;
 </string>
           </argument>
@@ -118,12 +134,17 @@ increase = true;
           <argument>
             <kind>1</kind>
             <string>
+key_run = keyboard_check(vk_lshift);
+
+if(key_run)
+scoreMax +=100;
+
 staminaMAX = 5 + global.addStamina;
 hpMAX = 3 + global.addHealth;
 
 if(global.scorePoints &lt; scoreMax - 100)
-global.scorePoints += 100;
-else if(global.scorePoints &lt; scoreMax - 10)
+global.scorePoints += 50;
+else if(global.scorePoints &lt; scoreMax - 50)
 global.scorePoints += 10;
 else if (global.scorePoints &lt; scoreMax)
 global.scorePoints += 1;
@@ -146,7 +167,7 @@ if(global.scorePoints &gt;= global.pointsMaximum)
     global.playerLevel += 1;  
     stamina = staminaMAX;
     hp = hpMAX;
-    global.pointsMaximum = global.pointsMaximum * (1.5 + global.levelnumber);
+    global.pointsMaximum = global.pointsMaximum * (0.5 + global.levelnumber);
     alarm[0] = 130;
     levelUp = true;
 }
@@ -233,14 +254,10 @@ if(obj_playerBody.win == 1)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_title,0,870,60)
+            <string>//draw_sprite(spr_title,0,870,60)
 
-//draw_text(333,333,obj_playerBody.x);
-//draw_text(10,30,global.pointsMaximum);
-//draw_text(150,80,global.playerLevel);
 draw_sprite(spr_hudText,0,650,50);
-draw_sprite(spr_hudLevels,global.playerLevel,760,50);
-//draw_text(10,120,scoreMax);
+draw_sprite(spr_hudLevels,global.playerLevel,750,50);
 
 draw_rectangle_colour(70, 35, 570, 65,cOrange,cOrange,cOrange,cOrange,0);
 //draw_rectangle_colour(100, 35, 600, 65,c_white,c_white,c_white,c_white,1);
@@ -259,14 +276,13 @@ for (i = 0; i &lt; stamina; i += 1)
     
 draw_sprite(spr_hudgraphics,0,150,740);
 draw_sprite(spr_hudgraphics,1,70,740);
-draw_sprite(spr_hudgraphics,2,930,740);
 draw_sprite(spr_hudgraphics,4,70,50);
 
 if(obj_playerBody.jetpack == true)
 {
-    draw_healthbar(760,720,900,760,obj_jetpack.lasting,c_white,c_gray,c_dkgray,1,false,false);
+    draw_rectangle_colour(140, 660, 140 + (obj_jetpack.lasting / 100 * 300), 680,c_red,c_orange,c_orange,c_red,0);
     draw_healthbar(400,70,600,85,obj_playerBody.jetfuel * 2,c_black,c_orange,c_orange,0,true,true);
-    draw_sprite(spr_hudgraphics,3,930,740);
+    draw_sprite(spr_hudgraphics,3,150,670);
     
 }
 
@@ -302,6 +318,16 @@ if(increase == true)
     if (global.playerLevel == 2)
     draw_sprite(spr_statIncrease,0,view_wport[0]/2,view_hport[0]/2);
     if (global.playerLevel == 3)
+    draw_sprite(spr_statIncrease,1,view_wport[0]/2,view_hport[0]/2);
+    if (global.playerLevel == 4)
+    draw_sprite(spr_statIncrease,0,view_wport[0]/2,view_hport[0]/2);
+    if (global.playerLevel == 5)
+    draw_sprite(spr_statIncrease,1,view_wport[0]/2,view_hport[0]/2);
+    if (global.playerLevel == 6)
+    draw_sprite(spr_statIncrease,0,view_wport[0]/2,view_hport[0]/2);
+    if (global.playerLevel == 7)
+    draw_sprite(spr_statIncrease,0,view_wport[0]/2,view_hport[0]/2);
+    if (global.playerLevel == 8)
     draw_sprite(spr_statIncrease,1,view_wport[0]/2,view_hport[0]/2);
 }
 </string>

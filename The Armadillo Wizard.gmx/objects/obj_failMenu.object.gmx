@@ -50,7 +50,8 @@ act = 0;
           <argument>
             <kind>1</kind>
             <string>
-key_back = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0,gp_face1));
+key_back = keyboard_check_pressed(ord("W")) || (gamepad_button_check_pressed(0,gp_face4));
+key_restart = keyboard_check_pressed(ord("S")) || (gamepad_button_check_pressed(0,gp_face1));
 
 if(obj_playerBody.fail)
 {    
@@ -81,6 +82,11 @@ if(obj_playerBody.fail2 &amp;&amp; key_back)
 { 
     room_goto(rm_levelSelect);
 }
+
+if(obj_playerBody.fail2 &amp;&amp; key_restart)
+{ 
+    room_restart();
+}
 </string>
           </argument>
         </arguments>
@@ -103,7 +109,7 @@ if(obj_playerBody.fail2 &amp;&amp; key_back)
         <arguments>
           <argument>
             <kind>13</kind>
-            <string>16777215</string>
+            <string>33023</string>
           </argument>
         </arguments>
       </action>
@@ -149,7 +155,9 @@ if(obj_playerBody.fail2 &amp;&amp; key_back)
             <kind>1</kind>
             <string>
 if(obj_playerBody.fail2)
-{    
+{
+    draw_text(200,230,"Press Y to reutrn to menu");  
+    draw_text(200,280,"Press A to restart Level");  
     draw_sprite(spr_failText,0,view_wport[0]/2,view_hport[0]/2);
     draw_text(200,500,"You Earned");
     draw_text(600,500,obj_scoreControl.scorePoints);

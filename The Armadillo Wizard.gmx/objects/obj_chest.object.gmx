@@ -111,7 +111,7 @@ y += vsp;
           <argument>
             <kind>1</kind>
             <string>///Looting
-key_pickup = keyboard_check_pressed(ord("Q")) || (gamepad_button_check_pressed(0,gp_face2));
+key_pickup = keyboard_check_pressed(ord("Q")) || (gamepad_button_check_pressed(0,gp_face4));
 
 if(!open)
 image_index = 0;
