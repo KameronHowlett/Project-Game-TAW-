@@ -34,7 +34,7 @@ part_type_sprite(partEngine2,spr_partOrb,false,false,false);
 part_type_size(partEngine2,1,2,-0.005,0);
 part_type_colour3(partEngine2,c_white,c_aqua,c_aqua);
 part_type_alpha2(partEngine2,.8,0);
-part_type_life(partEngine2,room_speed,room_speed *3);
+part_type_life(partEngine2,room_speed,room_speed * 3);
 part_type_direction(partEngine2, 180,180,0,1);
 part_type_speed(partEngine2,5,5,0,0);
 

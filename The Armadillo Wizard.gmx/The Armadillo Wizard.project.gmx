@@ -109,6 +109,7 @@
     <sprite>sprites\spr_failText</sprite>
     <sprite>sprites\spr_menupause</sprite>
     <sprite>sprites\spr_controller</sprite>
+    <sprite>sprites\spr_infinite</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>

@@ -280,7 +280,11 @@ draw_sprite(spr_hudgraphics,4,70,50);
 
 if(obj_playerBody.jetpack == true)
 {
+    if(!obj_jetpack.infinite)
     draw_rectangle_colour(140, 660, 140 + (obj_jetpack.lasting / 100 * 300), 680,c_red,c_orange,c_orange,c_red,0);
+    else
+    draw_sprite(spr_infinite,0,220,670);
+    
     draw_healthbar(400,70,600,85,obj_playerBody.jetfuel * 2,c_black,c_orange,c_orange,0,true,true);
     draw_sprite(spr_hudgraphics,3,150,670);
     

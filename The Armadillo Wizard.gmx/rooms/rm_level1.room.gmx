@@ -4,13 +4,13 @@
   <width>2000</width>
   <height>1000</height>
   <vsnap>16</vsnap>
-  <hsnap>16</hsnap>
+  <hsnap>8</hsnap>
   <isometric>0</isometric>
   <speed>60</speed>
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>0</showcolour>
-  <code></code>
+  <code>global.levelnumber = 1;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -54,7 +54,6 @@
     <instance objName="obj_camera" x="176" y="128" name="inst_A70B14F4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_backgroundControl" x="192" y="128" name="inst_45906538" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pauseMenu" x="224" y="128" name="inst_E3D300E6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_level1" x="240" y="128" name="inst_BA7F8794" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="448" y="624" name="inst_4CA50FE1" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="576" y="640" name="inst_2F4EEBED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="576" y="656" name="inst_28AE400F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
@@ -369,8 +368,6 @@
     <instance objName="obj_bolder" x="1744" y="336" name="inst_40313574" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_iceSpikes" x="1024" y="448" name="inst_BB01A6BC" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_iceSpikes" x="1216" y="224" name="inst_5D0ED6DE" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iceSpikes" x="1472" y="496" name="inst_8B2230B6" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_iceSpikes" x="1600" y="496" name="inst_0A071A4D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2000" y="48" name="inst_838A9200" locked="0" code="" scaleX="1" scaleY="-3" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="2000" y="-16" name="inst_3B4EC4EF" locked="0" code="" scaleX="-80" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="720" y="-16" name="inst_6F738216" locked="0" code="" scaleX="-45" scaleY="1" colour="4294967295" rotation="0"/>
@@ -433,6 +430,8 @@
     <instance objName="obj_platform" x="1584" y="816" name="inst_B079118E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="1600" y="816" name="inst_9AB8D43A" locked="0" code="" scaleX="9" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_platform" x="1568" y="816" name="inst_0EF9D142" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1776" y="400" name="inst_00BD2062" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_platform" x="1808" y="480" name="inst_115CDDA4" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background4" x="592" y="656" w="16" h="16" xo="48" yo="96" id="10005015" name="inst_50D45D3F" depth="2000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

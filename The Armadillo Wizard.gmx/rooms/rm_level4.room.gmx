@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>global.levelnumber = 4;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -57,7 +57,7 @@
     <instance objName="obj_platform" x="0" y="400" name="inst_1E46F916" locked="0" code="" scaleX="125" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_playerBody" x="64" y="384" name="inst_8AD8FC73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelNames" x="112" y="16" name="inst_B2EFAD55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_level4" x="96" y="16" name="inst_7335C8ED" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_jetpack" x="128" y="368" name="inst_9E61CBB3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles>
     <tile bgName="background4" x="0" y="400" w="16" h="16" xo="48" yo="16" id="10016718" name="inst_AEE7AFB3" depth="-1000000" locked="0" colour="4294967295" scaleX="1" scaleY="1"/>

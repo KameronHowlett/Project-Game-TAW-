@@ -156,7 +156,7 @@ if(obj_playerBody.fail2 &amp;&amp; key_restart)
             <string>
 if(obj_playerBody.fail2)
 {
-    draw_text(200,230,"Press Y to reutrn to menu");  
+    draw_text(200,230,"Press Y to return to menu");  
     draw_text(200,280,"Press A to restart Level");  
     draw_sprite(spr_failText,0,view_wport[0]/2,view_hport[0]/2);
     draw_text(200,500,"You Earned");

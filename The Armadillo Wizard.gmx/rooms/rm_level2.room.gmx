@@ -10,7 +10,7 @@
   <persistent>0</persistent>
   <colour>12632256</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>global.levelnumber = 2;</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
@@ -55,7 +55,6 @@
     <instance objName="obj_backgroundControl" x="32" y="16" name="inst_0541F318" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_snow" x="48" y="16" name="inst_4CF3D840" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_pauseMenu" x="64" y="16" name="inst_A82BC530" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_level2" x="96" y="16" name="inst_DD9145F9" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_playerBody" x="48" y="912" name="inst_8AD8FC73" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_levelNames" x="112" y="16" name="inst_B2EFAD55" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wall" x="-16" y="848" name="inst_1BBC6B54" locked="0" code="" scaleX="1" scaleY="6" colour="4294967295" rotation="0"/>

@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>///Variables
 
+infinite = false;
 dir = -1;
 jetting = false;
 equipped = false;
@@ -119,7 +120,33 @@ partSmoke_emit = part_emitter_create(partSmoke_sys);
         <arguments>
           <argument>
             <kind>1</kind>
+            <string>///Check global
+
+if(global.levelnumber == 4)
+infinite = true;
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
             <string>image_speed = 0;
+if(infinite)
+equipped = true;
 
 if(equipped)
 {
@@ -159,7 +186,7 @@ if(equipped)
 else
 image_index = 0;
 
-if(lasting &lt;= 0)
+if(lasting &lt;= 0 &amp;&amp; !infinite)
 {
     image_index = 1;
     equipped = false;
