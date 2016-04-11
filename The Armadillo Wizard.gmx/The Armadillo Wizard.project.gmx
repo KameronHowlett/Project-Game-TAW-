@@ -57,6 +57,8 @@
     <sprite>sprites\sprite39</sprite>
     <sprite>sprites\spr_partnum2</sprite>
     <sprite>sprites\spr_hudgraphics</sprite>
+    <sprite>sprites\spr_characters</sprite>
+    <sprite>sprites\spr_characterDent</sprite>
     <sprite>sprites\spr_hudText</sprite>
     <sprite>sprites\spr_hudLevels</sprite>
     <sprite>sprites\spr_healthBars</sprite>
@@ -110,6 +112,7 @@
     <sprite>sprites\spr_menupause</sprite>
     <sprite>sprites\spr_controller</sprite>
     <sprite>sprites\spr_infinite</sprite>
+    <sprite>sprites\spr_speech</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background</background>
@@ -129,10 +132,13 @@
     <background>background\bck_screen</background>
   </backgrounds>
   <paths name="paths"/>
+  <scripts name="scripts">
+    <script>scripts\scr_text.gml</script>
+  </scripts>
   <fonts name="fonts">
     <font>fonts\font_test</font>
     <font>fonts\fonr_Bunce</font>
-    <font>fonts\font_Speech</font>
+    <font>fonts\fnt_speech</font>
   </fonts>
   <objects name="objects">
     <object>objects\obj_platform</object>
@@ -200,7 +206,7 @@
       <object>objects\obj_startCam</object>
       <object>objects\obj_jetwing</object>
     </objects>
-    <object>objects\obj_level1</object>
+    <object>objects\obj_levelSpeech</object>
     <object>objects\obj_level2</object>
     <object>objects\obj_level3</object>
     <object>objects\obj_level4</object>
@@ -208,6 +214,8 @@
     <object>objects\obj_iceSpikes</object>
     <object>objects\obj_icePlatform</object>
     <object>objects\obj_finish</object>
+    <object>objects\obj_panicButton</object>
+    <object>objects\obj_text</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_logo</room>
@@ -216,7 +224,6 @@
     <room>rooms\rm_level2</room>
     <room>rooms\rm_level3</room>
     <room>rooms\rm_level4</room>
-    <room>rooms\rm_pauseScreen</room>
     <room>rooms\room7</room>
   </rooms>
   <help>
